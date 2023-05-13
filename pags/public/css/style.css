@@ -1,0 +1,176 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Josefin+Sans:ital,wght@1,100&family=Lato:ital,wght@1,300&family=Montserrat:wght@200&family=Pacifico&display=swap');
+
+*{
+    font-family: "Bangers";
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #114DB6;
+}
+.container-nav{
+    width: 100%;
+    height: 80px;
+    background-color: #114DB6;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 999;
+    border-bottom-left-radius: 20%;
+}
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vh;
+    align-items: center;
+    color: white;
+    list-style: none;
+    padding: 5px;
+    
+}
+.navbar li{
+    padding: 5px;
+    font-size: 20px;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    
+}
+.navbar li:hover{
+    cursor: pointer;
+    background-color: #083788;
+    border-radius: 8%;
+    transition: 2s;
+}
+.logo-navbar{
+    width: 300px;
+    height: 100px;
+    margin-left: 5vh;
+}
+.section{
+    width: 100%;
+    height: 97vh;
+}
+.bem-vindo{
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:#000000 0px 150px 300px -15px inset;
+    animation: bem-vindo 15s infinite;
+    background-size: 100% 97vh;
+}
+@keyframes bem-vindo{
+    0%{
+        background-image: url("../img/shenlongwpp.jpg");
+    }
+    25%{
+        background-image: url("../img/casa-do-kame.png");
+    }
+    50%{
+        background-image: url("../img/bulmaegoku.jpg");
+    }
+    75%{
+        background-image: url("../img/goku-encarando.jpg");
+    }
+    100%{
+        background-image: url("../img/sagacelwpp.jpg");
+    }
+}
+
+.text-bem-vindo p{
+    color: white;
+    font-size: 45px;
+}
+.text-bem-vindo{
+    width: 80vh;
+    padding: 20px;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5%;
+    background-blend-mode: darken;
+    background: rgba(88, 88, 88, 0.5);
+}
+.text-bem-vindo,.text-bem-vindo p{
+    visibility: hidden;
+}
+.apresentacao{
+    box-shadow:#000000 0px 90px 300px -15px inset;
+    text-align: center; 
+    height: fit-content;
+    padding-bottom: 80px;
+}
+.title{
+    color: #ffffff;
+    font-size: 50px;
+    padding-top: 20px;
+}
+.div-title{
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+}
+.div-title .title{
+    visibility: hidden;
+}
+.div-apresentacao{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+.ap1{
+    padding-bottom: 80px;
+}
+.sub-div-apresentacao{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.text-apresentacao{
+    padding-left: 50px;
+}
+.p-apresentacao{
+    color: #ffffff;
+    font-size: 30px;
+    text-align: left;
+}
+.img-apresentacao{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 60px;
+    margin-top: 30px;
+    width: 500px;
+    height: 300px;
+    border-radius: 5%;
+}
+.p-img{
+    padding-top: 10px;
+}
+.p-apresentacao,.img-apresentacao,.p-img{
+    visibility: hidden;
+}
+/* 
+body::-webkit-scrollbar {
+    width: 12px;               
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: orange;        
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: blue;    
+    border-radius: 20px;       
+    border: 3px solid orange;  
+  }
+   */

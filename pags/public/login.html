@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/login.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="../js/funcoes.js"></script>
+
+        <title>Home</title>
+    </head> 
+    <body>
+        <header>
+            <div class="container-nav"> 
+                <img src="../img/Dragon_Ball_logo.png" class="logo-navbar" alt="">
+                <ul class="navbar">
+                    <li>Home</li>
+                    <li>Apresentação</li>
+                    <li><a href="personagens.html">Personagens</a></li>
+                    <li>Cadastrar</li>
+                    <li>Login</li>
+                </ul>
+            </div>
+        </header>
+        <div class="fundo-msg-cadastro">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
+        </div>
+        <div class="section sec-login">
+            <div class="container-login">
+                <div class="div-login"> 
+                    <div class="logo-inputs" >
+                        <img class="img-minilogo" src="../img/logo-db2.png" alt="">
+                    </div>
+                    <div class="login" id="login">
+                        <input class="inputs" type="text" placeholder="Email">
+                        <input class="inputs" type="text" placeholder="Senha">
+                        <button class="btn">Entrar</button>
+                    </div>
+                    <div class="login cadastro" id="cadastro">
+                        <div class="logo-cadastro" >
+                            Criar conta
+                        </div>
+                        <div class="div-inputs">
+                            <input class="inputs" type="text" placeholder="Email" id="nome_input">
+                            <input class="inputs" type="text" placeholder="Senha" id="email_input">
+                            <input class="inputs" type="text" placeholder="Email" id="senha_input">
+                            <input class="inputs" type="text" placeholder="Email" id="confirmacao_senha_input">
+                            <button class="btn" onclick="cadastrar()"> Cadastrar</button>
+                            <div id="div_aguardar" class="loading-div">
+                                <img src="./assets/circle-loading.gif" id="loading-gif">
+                            </div>
+                        </div>
+        
+                        <div id="div_erros_login"></div>
+    
+                    </div>
+                    <div id="div_img" class="img-esconde"><button id="btn" onclick="abrirCadastro()" class="convite-cadastrar">
+                    </button></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    var divImg = document.getElementById("div_img");
+    var botao = document.getElementById("btn");
+     if(window.localStorage.getItem("tela") != null){
+        var controle = window.localStorage.getItem("tela");
+        localStorage.removeItem("tela");
+        if(controle == "Login"){
+        
+            divImg.style.animation = "loginCadastro2 1s"
+            divImg.style.right = 0;
+            divImg.style.borderTopRightRadius = "5%";
+            divImg.style.borderBottomRightRadius = "5%";
+            divImg.style.borderTopLeftRadius = "0";
+            divImg.style.borderBottomLeftRadius = "0";
+            botao.textContent = "Criar conta";
+        
+        }
+        else if(controle == "Cadastro"){
+
+            divImg.style.animation = "loginCadastro 1s"
+            divImg.style.left = 0;
+            divImg.style.borderTopRightRadius = "0";
+            divImg.style.borderTopRightRadius = "0";
+            divImg.style.borderTopLeftRadius = "5%";
+            divImg.style.borderBottomLeftRadius = "5%";
+            botao.textContent = "Fazer Login"
+        }
+    }
+    function abrirCadastro(){
+  
+        if (divImg.style.left == "0px") {
+            divImg.style.animation = "loginCadastro2 1s"
+            divImg.style.left = "";
+            divImg.style.right = "0px";
+            divImg.style.borderTopRightRadius = "5%";
+            divImg.style.borderBottomRightRadius = "5%";
+            divImg.style.borderTopLeftRadius = "0";
+            divImg.style.borderBottomLeftRadius = "0";
+            botao.textContent = "Criar Conta";
+        } else {
+            divImg.style.animation = "loginCadastro 1s"
+            divImg.style.right = "";
+            divImg.style.left = "0px";
+            divImg.style.borderTopRightRadius = "0";
+            divImg.style.borderBottomRightRadius = "0";
+            divImg.style.borderTopLeftRadius = "5%";
+            divImg.style.borderBottomLeftRadius = "5%";
+            botao.textContent = "Fazer Login";
+        }
+    }
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            cardErro.style.Z
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+                cardErro.style.zIndex = "999";
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
