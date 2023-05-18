@@ -1,0 +1,13 @@
+.quebra-cabeca{
+    display: flex;
+    flex-direction: row;
+}
+.quadrado{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
