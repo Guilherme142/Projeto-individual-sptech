@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    background-color: #F68D2E;
+    box-shadow:#000000 0px 150px 300px -15px inset;
+    background-image:url('../img/ceu-azul.png');
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.container-nav{
+    width: 100%;
+    height: 80px;
+    background-color: #F68D2E;
+    box-shadow:#000000 0px 20px 80px -15px inset;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+    border-bottom-left-radius: 20%;
+}
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vh;
+    align-items: center;
+    color: white;
+    list-style: none;
+    padding: 5px;
+    
+}
+.navbar li{
+    padding: 5px;
+    font-size: 20px;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    
+}
+.navbar li:hover{
+    cursor: pointer;
+    background-color: #8a4102;
+    border-radius: 8%;
+    transition: 2s;
+}
+.logo-navbar{
+    width: 300px;
+    height: 100px;
+    margin-left: 5vh;
+}
+.section{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.img-goku{
+    width: 70vh;
+    height: 80vh;
+    position: absolute;
+    right: 5px;
+    bottom: 20px;
+}
+.bem-vindo{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container-quiz{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-quiz{
+    width: 80vh;
+    height: 70vh;
+    background-color: #114DB6;
+    border-radius: 10%;
+    box-shadow: 0 90px 180px -15px inset black, 0 150px 300px -5px black;
+    
+}
+.nav-quiz{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btn-nav{
+    color: white;
+    font-weight: bold;
+    height: 5vh;
+    width: 7vh;
+    cursor: pointer;
+    background-color: transparent;
+    border: 3px solid  #114DB6;
+}
+.btn-nav:hover{
+    transition: 0.5s;
+    box-shadow: 0 5px 15px -5px inset rgb(0, 0, 0);
+}
+.div-pergunta{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+}
+.pergunta-quiz{
+    border-radius: 10px;
+    width: 90%;
+    height: 100%;
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space:wrap;
+    padding: 5px;
+}
+.pergunta-quiz p{
+    color: white;
+    font-size: 20px;
+}
+.div-opcoes{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+.opcoes-quiz{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.opcoes-quiz button{
+    padding: 5px;
+    border: #0657e2 3px solid;
+    color: white;
+    font-weight: bold;
+    text-align: start;
+    background-color: transparent;
+    cursor: pointer;
+}
+.opcoes-quiz button:hover{
+    box-shadow: 0 5px 15px -5px inset rgb(0, 0, 0);
+}
+.pag1{
+    display: block;
+}
+.pag2{
+    display: none;
+}
+.pag3{
+    display: none;
+}
+.pag4{
+    display: none;
+}
+.pag5{
+    display: none;
+}
+.pag6{
+    display: none;
+}
+.pag7{
+    display: none;
+}
+.botoes-nav{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botoes-nav button{
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    background-color: #F68D2E;
+    box-shadow: #000000 0 5px 15px -5px inset;
+    font-weight: bold;
+    width: 15vh;
+    margin: 10px;
+}
+.botoes-nav button:hover{
+    background-color: #ac5000;
+    transition: 1s;
+}

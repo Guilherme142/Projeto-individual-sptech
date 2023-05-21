@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="../css/interacao.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <title>Olá</title>
+    </head>
+    <body>
+        <div id="interacao" class="ceu-azul">
+            <div class="container-fala">
+                <div class="div-fala">
+                    <p class="fala-goku" id="fala"></p>
+                </div>
+                <div class="div-button">
+                    <button class="btn-escolha" onclick="escolha(this)" value="Não">Não</button>
+                    <button class="btn-escolha" onclick="escolha(this)" value="Sim">Sim</button>
+                </div>
+                
+            </div>
+            <img src="../img/gokuzinho-nuvem.png" class="interacao" alt="">
+        </div>
+
+    </body>
+</html>
+<script>
+    fala.innerHTML = "Olá " + sessionStorage.NOME_USUARIO + ", como é bom vê-lo por aqui, gostaria de te propor um desafio, você aceita?";
+    var sr = ScrollReveal({reset:true});
+    sr.reveal('.container-fala',{duration:3000});
+    function escolha(btn){
+        var escolha = btn.value;
+        console.log(escolha)
+        if(escolha == "Sim"){
+            window.location = "quiz.html";
+        }
+        else if(escolha == "Não"){
+            window.location = "dashboard.html";
+        }
+    }
+</script>

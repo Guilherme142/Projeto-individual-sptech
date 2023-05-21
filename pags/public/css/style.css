@@ -100,7 +100,7 @@ body{
     background: rgba(88, 88, 88, 0.5);
 }
 .text-bem-vindo,.text-bem-vindo p{
-    visibility: hidden;
+    visibility:hidden;
 }
 .apresentacao{
     box-shadow:#000000 0px 90px 300px -15px inset;
