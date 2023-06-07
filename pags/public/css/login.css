@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Josefin+Sans:ital,wght@1,100&family=Lato:ital,wght@1,300&family=Montserrat:wght@200&family=Pacifico&display=swap');
+*{
+  font-family: "Bangers";
+}
 .sec-login{
     box-shadow:#000000 0px 150px 300px -15px inset;
 }

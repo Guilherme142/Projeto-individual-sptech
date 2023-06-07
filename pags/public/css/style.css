@@ -38,7 +38,6 @@ body{
 .navbar a{
     color: white;
     text-decoration: none;
-    
 }
 .navbar li:hover{
     cursor: pointer;

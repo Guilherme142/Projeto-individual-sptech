@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        img{
+            opacity: 0;
+        }
+        body{
+            overflow: hidden;
+        }
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    10%{
+        opacity: 0.1;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    30% {
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+       
+@keyframes desaparecer {
+    0% {
+        opacity: 1;
+    }
+    10%{
+        opacity: 0.9;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    30% {
+        opacity: 0.7;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.4;
+    }
+    70% {
+        opacity: 0.3;
+    }
+    80% {
+        opacity: 0.2;
+    }
+    90% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
+    }
+    
+}
+    </style>
+    <body id="tela">
+        
+        
+    </body>
+</html>
+<script>
+    var movimentacao = setInterval(mover,1000);
+    function mover(){ 
+        var maxX = 95;
+        var minX = -2;
+        var movimentacaoX = Math.random() * maxX + minX;
+        
+        var maxY = 50;
+        var minY = 1;
+        var movimentacaoY = Math.random() * maxY + minY;
+
+        
+        tela.innerHTML = `
+        <button onclick="destruir()" style="position: fixed;">Mover</button>
+        <img src="../img/brolly.png" id="vilao"  style="transform:translate(${movimentacaoX}vw, ${movimentacaoY}vh); width:300px" />`
+
+        var vilao = document.getElementById('vilao');
+        vilao.style.animation = "aparecer 0.3s ease-in-out";
+        vilao.style.opacity = 1;
+
+        setTimeout(function() {
+            vilao.style.animation = "desaparecer 0.3s ease-in-out";
+            vilao.style.opacity = 0;
+        }, 500);
+        vilao.onclick = function(){
+            clearInterval(movimentacao);
+            vilao.style.opacity = 1;
+            vilao.style.filter = "grayscale(100%)";
+        }
+    }
+</script>

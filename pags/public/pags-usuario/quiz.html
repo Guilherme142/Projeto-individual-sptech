@@ -12,8 +12,7 @@
             <div class="container-nav"> 
                 <img src="../img/Dragon_Ball_logo.png" class="logo-navbar" alt="">
                 <ul class="navbar">
-                    <li>Caça Esféras</li>
-                    <li>Dashboard</li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
                     <li>Sair</li>
                 </ul>
             </div>
@@ -24,13 +23,13 @@
             <div class="container-quiz">
                 <div class="div-quiz">
                     <div class="nav-quiz">
-                        <button value="1" onclick="navegacao(this)" class="btn-nav">1</button>
-                        <button value="2" onclick="navegacao(this)" class="btn-nav">2</button>
-                        <button value="3" onclick="navegacao(this)" class="btn-nav">3</button>
-                        <button value="4" onclick="navegacao(this)" class="btn-nav">4</button>
-                        <button value="5" onclick="navegacao(this)" class="btn-nav">5</button>
-                        <button value="6" onclick="navegacao(this)" class="btn-nav">6</button>
-                        <button value="7" onclick="navegacao(this)" class="btn-nav">7</button>
+                        <button value="1" id="btnNav1" onclick="navegacao(this)" class="btn-nav-selecionado">1</button>
+                        <button value="2" id="btnNav2" onclick="navegacao(this)" class="btn-nav">2</button>
+                        <button value="3" id="btnNav3" onclick="navegacao(this)" class="btn-nav">3</button>
+                        <button value="4" id="btnNav4" onclick="navegacao(this)" class="btn-nav">4</button>
+                        <button value="5" id="btnNav5" onclick="navegacao(this)" class="btn-nav">5</button>
+                        <button value="6" id="btnNav6" onclick="navegacao(this)" class="btn-nav">6</button>
+                        <button value="7" id="btnNav7" onclick="navegacao(this)" class="btn-nav">7</button>
                     </div>
                     <div class="pag1">
                         <div class="div-pergunta ">
@@ -40,14 +39,14 @@
                         </div>
                         <div class="div-opcoes ">
                             <div class="opcoes-quiz">
-                                <button>Opção A</button>
-                                <button>Opção B</button>
-                                <button>Opção C</button>
-                                <button>Opção D</button>
-                                <button>Opção E</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta1Certa">Opção ACerta</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta1Errado">Opção B</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta1Errado">Opção C</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta1Errado">Opção D</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta1Errado">Opção E</button>
                             </div>
                         </div>
-                        <div class="botoes-nav"><button onclick="navegacao(this)" value="2">Continuar</button></div>
+                        <div class="botoes-nav"><button  onclick="navegacao(this)" value="2">Continuar</button></div>
                     </div>
                     <div class="pag2">
                         <div class="div-pergunta ">
@@ -57,11 +56,11 @@
                         </div>
                         <div class="div-opcoes ">
                             <div class="opcoes-quiz">
-                                <button>Opção A</button>
-                                <button>Opção B</button>
-                                <button>Opção C</button>
-                                <button>Opção D</button>
-                                <button>Opção E</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta2Errado">Opção A</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta2Errado">Opção B</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta2Certa">Opção CCerta</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta2Errado">Opção D</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta2Errado">Opção E</button>
                             </div>
                         </div>
                         <div class="botoes-nav"><button onclick="navegacao(this)" value="1">Anterior</button><button onclick="navegacao(this)" value="3">Continuar</button></div>
@@ -74,11 +73,11 @@
                         </div>
                         <div class="div-opcoes ">
                             <div class="opcoes-quiz">
-                                <button>Opção A</button>
-                                <button>Opção B</button>
-                                <button>Opção C</button>
-                                <button>Opção D</button>
-                                <button>Opção E</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta3Errado">Opção A</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta3Errado">Opção B</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta3Errado">Opção C</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta3Certa">Opção DCerta</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta3Errado">Opção E</button>
                             </div>
                         </div>
                         <div class="botoes-nav"><button onclick="navegacao(this)" value="2">Anterior</button><button onclick="navegacao(this)" value="4">Continuar</button></div>
@@ -91,11 +90,11 @@
                         </div>
                         <div class="div-opcoes ">
                             <div class="opcoes-quiz">
-                                <button>Opção A</button>
-                                <button>Opção B</button>
-                                <button>Opção C</button>
-                                <button>Opção D</button>
-                                <button>Opção E</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta4Errado">Opção A</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta4Certa">Opção BCerta</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta4Errado">Opção C</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta4Errado">Opção D</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta4Errado">Opção E</button>
                             </div>
                         </div>
                         <div class="botoes-nav"><button onclick="navegacao(this)" value="3">Anterior</button><button onclick="navegacao(this)" value="5">Continuar</button></div>
@@ -108,11 +107,11 @@
                         </div>
                         <div class="div-opcoes ">
                             <div class="opcoes-quiz">
-                                <button>Opção A</button>
-                                <button>Opção B</button>
-                                <button>Opção C</button>
-                                <button>Opção D</button>
-                                <button>Opção E</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta5Errado">Opção A</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta5Errado">Opção B</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta5Errado">Opção C</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta5Errado">Opção D</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta5Certa">Opção ECerta</button>
                             </div>
                         </div>
                         <div class="botoes-nav"><button onclick="navegacao(this)" value="4">Anterior</button><button onclick="navegacao(this)" value="6">Continuar</button></div>
@@ -125,11 +124,11 @@
                         </div>
                         <div class="div-opcoes ">
                             <div class="opcoes-quiz">
-                                <button>Opção A</button>
-                                <button>Opção B</button>
-                                <button>Opção C</button>
-                                <button>Opção D</button>
-                                <button>Opção E</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta6Certa">Opção ACerta</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta6Errado">Opção B</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta6Errado">Opção C</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta6Errado">Opção D</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta6Errado">Opção E</button>
                             </div>
                         </div>
                         <div class="botoes-nav"><button onclick="navegacao(this)" value="5">Anterior</button><button onclick="navegacao(this)" value="7">Continuar</button></div>
@@ -142,14 +141,14 @@
                         </div>
                         <div class="div-opcoes ">
                             <div class="opcoes-quiz">
-                                <button>Opção A</button>
-                                <button>Opção B</button>
-                                <button>Opção C</button>
-                                <button>Opção D</button>
-                                <button>Opção E</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta7Errado">Opção A</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta7Errado">Opção B</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta7Errado">Opção C</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta7Certa">Opção DCerta</button>
+                                <button class="button-quiz" onclick="validacao(this)"value="pergunta7Errado">Opção E</button>
                             </div>
                         </div>
-                        <div class="botoes-nav"><button onclick="navegacao(this)" value="6">Anterior</button><button>Continuar</button></div>
+                        <div class="botoes-nav"><button onclick="navegacao(this)" value="6">Anterior</button><button onclick="finalizarQuiz()">Finalizar</button></div>
                     </div>
                 </div>              
                 
@@ -167,12 +166,203 @@
     var pag5 = document.querySelector(".pag5");
     var pag6 = document.querySelector(".pag6");
     var pag7 = document.querySelector(".pag7");
+    var acertos = 0;
+    var erros = 0;
+    var respostas = [];
+    var resposta1;
+    var resposta2;
+    var resposta3;
+    var resposta4;
+    var resposta5;
+    var resposta6;
+    var resposta7;
+    var alternativa1="";
+    var alternativa2="";
+    var alternativa3="";
+    var alternativa4="";
+    var alternativa5="";
+    var alternativa6="";
+    var alternativa7="";
+
+    function validacao(opcao){
+        // for(var i = 0 ; i < respostas.length)
+        var selecionada = opcao.value;
+        console.log("ESTE É A OPÇÃO:"+opcao.value)
+        if(selecionada.indexOf("pergunta1Certa") == 0 || selecionada.indexOf("pergunta1Errado") == 0){
+
+            resposta1 = opcao.value;
+            console.log("ESSE é o primeiro btn "+alternativa1);
+            if(alternativa1 == ""){
+                alternativa1 = opcao;
+                alternativa1.className = "button-quiz-selecionado";
+            }
+            else{
+                alternativa1.className = "button-quiz";
+                alternativa1 = opcao;
+                alternativa1.className = "button-quiz-selecionado";
+            }
+            console.log("ESSE é o segundo btn "+alternativa1);
+            console.log("estou na 1 e a resposta é:"+resposta1)
+           
+            
+        }
+        else if(selecionada.indexOf("pergunta2Certa") == 0 || selecionada.indexOf("pergunta2Errado") == 0){
+            resposta2 = opcao.value;
+            if(alternativa2 == ""){
+                alternativa2 = opcao;
+                alternativa2.className = "button-quiz-selecionado";
+            }
+            else{
+                alternativa2.className = "button-quiz";
+                alternativa2 = opcao;
+                alternativa2.className = "button-quiz-selecionado";
+            }
+            console.log("estou na 2 e a resposta é:"+resposta2)
+
+           
+        }
+        else if(selecionada.indexOf("pergunta3Certa") == 0 || selecionada.indexOf("pergunta3Errado") == 0){
+            resposta3 = opcao.value;
+            if(alternativa3 == ""){
+                alternativa3 = opcao;
+                alternativa3.className = "button-quiz-selecionado";
+            }
+            else{
+                alternativa3.className = "button-quiz";
+                alternativa3 = opcao;
+                alternativa3.className = "button-quiz-selecionado";
+            }
+            console.log("estou na 3 e a resposta é:"+resposta3)
+
+
+            
+        }
+        else if(selecionada.indexOf("pergunta4Certa") == 0 || selecionada.indexOf("pergunta4Errado") == 0){
+            resposta4 = opcao.value;
+            if(alternativa4 == ""){
+                alternativa4 = opcao;
+                alternativa4.className = "button-quiz-selecionado";
+            }
+            else{
+                alternativa4.className = "button-quiz";
+                alternativa4 = opcao;
+                alternativa4.className = "button-quiz-selecionado";
+            }
+            console.log("estou na 4 e a resposta é:"+resposta4)
+  
+        }
+        else if(selecionada.indexOf("pergunta5Certa") == 0 || selecionada.indexOf("pergunta5Errado") == 0){
+            resposta5 = opcao.value;
+            console.log("estou na 5 e a resposta é:"+resposta5)
+            if(alternativa5 == ""){
+                alternativa5 = opcao;
+                alternativa5.className = "button-quiz-selecionado";
+            }
+            else{
+                alternativa5.className = "button-quiz";
+                alternativa5 = opcao;
+                alternativa5.className = "button-quiz-selecionado";
+            }
+   
+        }
+        else if(selecionada.indexOf("pergunta6Certa") == 0 || selecionada.indexOf("pergunta6Errado") == 0){
+            resposta6 = opcao.value;
+            if(alternativa6 == ""){
+                alternativa6 = opcao;
+                alternativa6.className = "button-quiz-selecionado";
+            }
+            else{
+                alternativa6.className = "button-quiz";
+                alternativa6 = opcao;
+                alternativa6.className = "button-quiz-selecionado";
+            }
+            console.log("estou na 6 e a resposta é:"+resposta6)
+            
+        
+        }
+        else if(selecionada.indexOf("pergunta7Certa") == 0 || selecionada.indexOf("pergunta7Errado") == 0){
+            resposta7 = opcao.value;
+            if(alternativa7 == ""){
+                alternativa7 = opcao;
+                alternativa7.className = "button-quiz-selecionado";
+            }
+            else{
+                alternativa7.className = "button-quiz";
+                alternativa7 = opcao;
+                alternativa7.className = "button-quiz-selecionado";
+            }
+            console.log("estou na 7 e a resposta é:"+resposta7)
+    
+        }
+        
+        console.log(resposta1,resposta2,resposta3,resposta4,resposta5,resposta6,resposta7);
+    }
+    function finalizarQuiz(){
+        if(resposta1 == undefined){
+            alert("Respoda todas as perguntas")
+        }
+        else{
+
+                respostas.push(resposta1,resposta2,resposta3,resposta4,resposta5,resposta6,resposta7);
+                for(var i = 0; i<respostas.length;i++){
+                    if(respostas[i].indexOf(`pergunta${i+1}Errado`)==0){
+                        erros = erros + 1;
+                    }
+                    else{
+                        acertos = acertos + 1;
+                    }
+                }
+        
+            
+        
+                // Enviando o valor da nova input
+                fetch("/quiz/cadastrar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        // crie um atributo que recebe o valor recuperado aqui
+                        // Agora vá para o arquivo routes/usuario.js
+                        acertosServer : acertos,
+                        errosServer : erros,
+                        fkUsuarioServer: sessionStorage.ID_USUARIO
+                    })
+                }).then(function (resposta) {
+        
+                    console.log("resposta: ", resposta);
+        
+                    if (resposta.ok) {
+                        // cardErro.style.display = "block";
+                        // cardErro.style.zIndex = "999";
+                        // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        
+                        setTimeout(() => {
+                            alert("AI PAPAI")
+                        }, "1000")
+        
+                        // limparFormulario();
+                        // finalizarAguardar();
+                    } else {
+                        throw ("Houve um erro ao tentar realizar o cadastro!");
+                    }
+                }).catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                    // finalizarAguardar();
+                });
+                
+                return false;
+                console.log("Erro:"+erros,"Acertos:"+acertos);
+            }
+        }
 
     function navegacao(btn){
         var pag = btn.value;
+   
         console.log(pag);
 
         if(pag == 1){
+            btn1 = btn;
             pag1.style.display = "block";
             pag2.style.display = "none";
             pag3.style.display = "none";
@@ -180,8 +370,18 @@
             pag5.style.display = "none";
             pag6.style.display = "none";
             pag7.style.display = "none";
+
+            btnNav1.className = "btn-nav-selecionado";
+            btnNav2.className = "btn-nav";
+            btnNav3.className = "btn-nav";
+            btnNav4.className = "btn-nav";
+            btnNav5.className = "btn-nav";
+            btnNav6.className = "btn-nav";
+            btnNav7.className = "btn-nav";
+            
         }
         else if(pag == 2){
+            btn2 = btn;
             pag1.style.display = "none";
             pag2.style.display = "block";
             pag3.style.display = "none";
@@ -189,6 +389,14 @@
             pag5.style.display = "none";
             pag6.style.display = "none";
             pag7.style.display = "none";
+            
+            btnNav1.className = "btn-nav";
+            btnNav2.className = "btn-nav-selecionado";
+            btnNav3.className = "btn-nav";
+            btnNav4.className = "btn-nav";
+            btnNav5.className = "btn-nav";
+            btnNav6.className = "btn-nav";
+            btnNav7.className = "btn-nav";
         }
         else if(pag == 3){
             pag1.style.display = "none";
@@ -198,6 +406,14 @@
             pag5.style.display = "none";
             pag6.style.display = "none";
             pag7.style.display = "none";
+
+            btnNav1.className = "btn-nav";
+            btnNav2.className = "btn-nav";
+            btnNav3.className = "btn-nav-selecionado";
+            btnNav4.className = "btn-nav";
+            btnNav5.className = "btn-nav";
+            btnNav6.className = "btn-nav";
+            btnNav7.className = "btn-nav";
         }
         else if(pag == 4){
             pag1.style.display = "none";
@@ -207,6 +423,14 @@
             pag5.style.display = "none";
             pag6.style.display = "none";
             pag7.style.display = "none";
+
+            btnNav1.className = "btn-nav";
+            btnNav2.className = "btn-nav";
+            btnNav3.className = "btn-nav";
+            btnNav4.className = "btn-nav-selecionado";
+            btnNav5.className = "btn-nav";
+            btnNav6.className = "btn-nav";
+            btnNav7.className = "btn-nav";  
         }
         else if(pag == 5){
             pag1.style.display = "none";
@@ -216,6 +440,14 @@
             pag5.style.display = "block";
             pag6.style.display = "none";
             pag7.style.display = "none";
+
+            btnNav1.className = "btn-nav";
+            btnNav2.className = "btn-nav";
+            btnNav3.className = "btn-nav";
+            btnNav4.className = "btn-nav";
+            btnNav5.className = "btn-nav-selecionado";
+            btnNav6.className = "btn-nav";
+            btnNav7.className = "btn-nav";
         }
         else if(pag == 6){
             pag1.style.display = "none";
@@ -225,6 +457,14 @@
             pag5.style.display = "none";
             pag6.style.display = "block";
             pag7.style.display = "none";
+
+            btnNav1.className = "btn-nav";
+            btnNav2.className = "btn-nav";
+            btnNav3.className = "btn-nav";
+            btnNav4.className = "btn-nav";
+            btnNav5.className = "btn-nav";
+            btnNav6.className = "btn-nav-selecionado";
+            btnNav7.className = "btn-nav";
         }
         else if(pag == 7){
             pag1.style.display = "none";
@@ -233,7 +473,15 @@
             pag4.style.display = "none";
             pag5.style.display = "none";
             pag6.style.display = "none";
-            pag7.style.display = "block";
+            pag7.style.display = "block"
+            
+            btnNav1.className = "btn-nav";
+            btnNav2.className = "btn-nav";
+            btnNav3.className = "btn-nav";
+            btnNav4.className = "btn-nav";
+            btnNav5.className = "btn-nav";
+            btnNav6.className = "btn-nav";
+            btnNav7.className = "btn-nav-selecionado";
         }
     }
 </script>

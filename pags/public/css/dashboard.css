@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Josefin+Sans:ital,wght@1,100&family=Lato:ital,wght@1,300&family=Montserrat:wght@200&family=Pacifico&display=swap');
+
+*{
+    font-family: "Bangers";
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    background-color: #114DB6;
+    box-shadow:#000000 0px 150px 300px -15px inset;
+    position: relative;
+
+}
+.container-nav{
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    
+}
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vh;
+    align-items: center;
+    color: white;
+    list-style: none;
+    padding: 5px;
+    
+}
+.navbar li{
+    padding: 5px;
+    font-size: 20px;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    
+}
+.navbar li:hover{
+    cursor: pointer;
+    background-color: #8a4102;
+    border-radius: 8%;
+    transition: 2s;
+}
+.logo-navbar{
+    width: 300px;
+    height: 100px;
+    margin-left: 5vh;
+    z-index: 999;
+}
+.section{
+    width: 100%;
+    height: 100vh;
+
+}
+.grafico-geral{
+    width: 120vh;
+    padding: 5vh;
+    border-radius: 10px;
+    /* box-shadow: #ffffff 60px 20px 300px 0px inset,#fafdfa 0px 60px 100px 50px inset,#4e8fff 0 -80px 50px 0 inset;
+     */
+     background-color: #fff;
+    border: #000000 5px solid;
+}
+.grafico1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+
+}
+.title-grafico-geral{
+    margin-top: 5vh;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+#myChartCanvas1{
+    color: white;
+}
+.container-left{
+    z-index: 2;
+    height: 100vh;
+    width: 30vh;
+    background-color: #F68D2E;
+    background: linear-gradient(180deg, #000000,#492200, #c05a00 ,#da6703 , #F68D2E);
+    box-shadow:#000000 0px 20px 80px -15px inset,#005eff 0px 20px 80px -15px ;
+    position: absolute;
+    top: 0;
+}
+.logo-left{
+    width: 100%;
+    height: 20vh;
+    position: relative;
+}
+.img-logo-left{
+    position: absolute;
+    top: -5vh;
+    width: 30vh;
+    height: 30vh;
+}
+.dados-user{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:white;
+    margin: auto;
+}
+.btn-lateral{
+    width: 18vh;
+    height: 10vh;
+    font-size: 20px;
+    background-color:   transparent;
+    border-radius: 10px;
+    margin: auto;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: white;
+    border: 1px solid #000000;
+    cursor: pointer;
+    box-shadow: #000000 0 20px 40px -10px inset;
+    background: linear-gradient(90deg, #000000, #114DB6 , #4589ff);
+}
+.btn-lateral:hover{
+    transition: 0.5s;
+    color: #fff;
+    background-color: #114DB6;
+    border: 2px solid;
+}
+.nome-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+    font-size: 40px;
+    color: white;
+}
+.container-right{
+    height: 100vh;
+    width: 35vh;
+    position: absolute;
+    top: 6vh;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.infos{
+    width: 80%;
+    height: 20vh;
+    background-color: #0753d6;
+    margin-top: 2vh;
+    border-radius: 10px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
