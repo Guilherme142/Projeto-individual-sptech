@@ -13,7 +13,24 @@
     <!-- <body onload=" atualizarFeed()"> -->
      
     <body>
-      <header>
+      <div class="fundo-desempenho" id="desempenho">
+          <div class="div-desempenho">
+            <div class="title-desempenho">
+              Seu desempenho
+              <button class="btnSair" onclick="fecharDesempenho()">X</button>
+            </div>
+            <div class="title-graficos"><h1>Suas tentativas</h1><h1>Sua evolução de acertos</h1></div>
+            <div class="graficos-desempenho">
+              <div class="grafico-desempenho">
+                <canvas id="myChartCanvas3"></canvas>
+              </div>
+              <div class="grafico-desempenho">
+                <canvas id="myChartCanvas2"></canvas>
+              </div>
+            </div>
+          </div>
+      </div>
+      <header> 
         <div class="container-nav"> 
             <img src="../img/Dragon_Ball_logo.png" class="logo-navbar" alt="">
  
@@ -24,9 +41,10 @@
 
         </div>
         <div class="dados-user">
-            <button class="btn-lateral" onclick="trocarPag()">Ver seu desempenho</button>
+            <button class="btn-lateral btnDesemp" onclick="abrirDesempenho()">Ver seu desempenho no quiz</button>
             <a href="quiz.html" class="btn-lateral">Quiz</a>
-
+            <a href="dashboard-batalha.html" class="btn-lateral">Gráfico torneio</a>
+            <a href="campo-batalha.html" class="btn-lateral">Torneio</a>
         </div>
       </div>
         <div id="section" class="section">
@@ -146,25 +164,24 @@
                 labels: labels,
                 datasets: [
                   {
-                    label: "Pontuação",
+                    label: ["Pontuação"],
                     data: [],
                     fill: false,
-                    backgroundColor: [],
+                    backgroundColor: ['rgb(246, 141, 46)'],
                     tension: 0.1,
                   },
+                  
                 ]
             };
 
             console.log('----------------------------------------------')
             console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
             console.log(jsonMelhoresQuiz)
-            var vetorCor1 = ['rgb(9, 255, 0)','rgb(240, 0, 0) ','rgb(255, 166, 0)','rgb(0, 119, 255)','rgb(140, 0, 255)','rgb(255, 0, 55)','rgb(0, 255, 76)']
             // Inserindo valores recebidos em estrutura para plotar o gráfico
             for (i = 0; i < jsonMelhoresQuiz.length; i++) {
               var registro = jsonMelhoresQuiz[i];
               labels.push(registro.nome);
                 dados.datasets[0].data.push(registro.acertos);
-                dados.datasets[0].backgroundColor.push(vetorCor1[i]);
             }
             
             console.log('----------------------------------------------')
@@ -179,19 +196,8 @@
             let config = {
               type: 'bar',
               data: dados,
-              options: {
-                plugins: {
-                  legend: {
-                    labels: {
-                      font:{
-                        color: 'white' // Define a cor dos labels
-
-                      }
-                    }
-                  }
-                }
-              }
             };
+            Chart.defaults.color = '#fff';
             
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
@@ -235,7 +241,15 @@
                         dados.push(jsonQuizDesempenho[i].acertos);
                         dados2.push(jsonQuizDesempenho[i].erros);
                         var dataQuiz = new Date(jsonQuizDesempenho[i].dataQuiz);
-                        var dataFormatada = dataQuiz.toLocaleTimeString() + " " + dataQuiz.toLocaleDateString();
+                        var diaMesFormatado= dataQuiz.toLocaleDateString("pt-BR", {
+                          day: "numeric",
+                          month: "numeric"
+                        });
+                        var horaMinutoFormatado = dataQuiz.toLocaleTimeString("pt-BR", {
+                          hour: "numeric",
+                          minute: "numeric"
+                        });
+                        var dataFormatada =diaMesFormatado+" as "+horaMinutoFormatado + " " ;
                         labels.push(dataFormatada);
                         console.log("ESSA É O DO QUIZDESEMPENHO DATA: "+dados2[i]);
                       }
@@ -274,7 +288,8 @@ console.log('iniciando plotagem do gráfico...');
             label: 'Acertos',
             data: [],
             fill: false,
-            backgroundColor: 'rgb(17, 77, 182)',
+            borderColor: 'rgb(246, 141, 46)',
+            backgroundColor: 'rgb(246, 141, 46)',
             tension: 0.1,
           },
         ]
@@ -302,16 +317,7 @@ console.log('iniciando plotagem do gráfico...');
     // Criando estrutura para plotar gráfico - config
     const config = {
         type: 'line',
-        data: dados,
-        options: {
-        scales: {
-          y: {
-            max: 7, // Defina o valor máximo desejado aqui
-            // Outras opções de escala, se necessário
-          }
-        }
-        // Outras opções do seu gráfico
-      }
+        data: dados
     };
 
 // Adicionando gráfico criado em div na tela
@@ -340,7 +346,7 @@ console.log('iniciando plotagem do gráfico...');
                     label: 'Acertos',
                     data: [],
                     fill: false,
-                    backgroundColor: 'rgb(17, 77, 182)',
+                    backgroundColor: 'rgb(65, 134, 255)',
                     tension: 0.1
                 },
                 {
@@ -398,5 +404,14 @@ let myChart = new Chart(
 
 // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
 }
-
+Chart.defaults.color = '#fff';
+var desempenho = document.getElementById('desempenho');
+function abrirDesempenho(){
+  desempenho.style.zIndex = 97;
+  desempenho.style.display = 'flex';
+}
+function fecharDesempenho(){
+  desempenho.style.zIndex = 0;
+  desempenho.style.display = 'none';
+}
 </script>

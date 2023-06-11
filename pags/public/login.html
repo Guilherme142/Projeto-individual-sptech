@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src="../js/funcoes.js"></script>
-
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <title>Home</title>
     </head> 
     <body>
@@ -53,7 +53,7 @@
                             <input class="inputs" type="text" placeholder="Senha confirmação" id="confirmacao_senha_input">
                             <button class="btn" onclick="cadastrar()"> Cadastrar</button>
                             <div id="div_aguardar" class="loading-div">
-                                <img src="./assets/circle-loading.gif" id="loading-gif">
+                                <img src="./img/circle-loading.gif  " id="loading-gif">
                             </div>
                         </div>
         
@@ -157,17 +157,12 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
-                cardErro.style.zIndex = "999";
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-                setTimeout(() => {
-                }, "2000")
-
-                limparFormulario();
+                swal("Cadastro bem sucedido!", "Cadastro realizado!", "success");
                 finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
+                finalizarAguardar();
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);

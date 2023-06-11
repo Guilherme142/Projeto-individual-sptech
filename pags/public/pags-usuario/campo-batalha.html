@@ -4,122 +4,268 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <link rel="stylesheet" href="../css/batalha.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <title>Batalha</title>
     </head>
-    <style>
-        img{
-            opacity: 0;
-        }
-        body{
-            overflow: hidden;
-        }
-@keyframes aparecer {
-    0% {
-        opacity: 0;
-    }
-    10%{
-        opacity: 0.1;
-    }
-    20% {
-        opacity: 0.2;
-    }
-    30% {
-        opacity: 0.3;
-    }
-    40% {
-        opacity: 0.4;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    60% {
-        opacity: 0.6;
-    }
-    70% {
-        opacity: 0.7;
-    }
-    80% {
-        opacity: 0.8;
-    }
-    90% {
-        opacity: 0.9;
-    }
-    100% {
-        opacity: 1;
-    }
-    
-}
-       
-@keyframes desaparecer {
-    0% {
-        opacity: 1;
-    }
-    10%{
-        opacity: 0.9;
-    }
-    20% {
-        opacity: 0.8;
-    }
-    30% {
-        opacity: 0.7;
-    }
-    40% {
-        opacity: 0.6;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    60% {
-        opacity: 0.4;
-    }
-    70% {
-        opacity: 0.3;
-    }
-    80% {
-        opacity: 0.2;
-    }
-    90% {
-        opacity: 0.1;
-    }
-    100% {
-        opacity: 0;
-    }
-    
-}
-    </style>
-    <body id="tela">
-        
+
+    <body>
+
+        <div class="div-alertas">     
+            <div class="alert alert-amg" id="alertViloes"> 
+                <div class="title-alert">Derrote os seguinte vilões no menor período de tempo.</div>
+                <div class="title-alert" style="color: red;">OBS* cuidado com seus aliados.</div>
+                <div class="div-imgs-alertas">
+                    <div class="img-viloes buu-vilao"></div>
+                    <div class="img-viloes cell-vilao"></div>
+                    <div class="img-viloes black-vilao"></div>
+                    <div class="img-viloes brolly-vilao"></div>
+                    <div class="img-viloes freeza-vilao"></div>
+                </div>
+                <div class="rodape-alertas"><button onclick="alertasAbrir('alertTutorial')">ok</button> </div>
+            </div>
+            <div class="div-alertas">
+
+                <div class="alert alert-amg" id="alertTutorial"> 
+                    <div class="title-alert">Para derrotar os vilões basta golpea-los com o cursor do mouse</div>
+                    <div class="title-alert" style="color: red;">OBS* Seus aliados também são derrotados caso você os golpeie por engano.</div>
+                    <div class="div-imgs-alertas">
+                        <div class="tutorial"></div>
+                    </div>
+                    <div class="rodape-alertas"><button onclick="batalhar()">ok</button> </div>
+                </div>
+            </div>
+            <div class="alert alert-amg" id="alert1"> 
+                <div class="title-alert">Você derrotou todos os seus aliados</div>
+                <div class="div-imgs-alertas">
+                    <div class="imgs-alert img1"></div>
+                    <div class="imgs-alert img2"></div>
+                    <div class="imgs-alert img3"></div>
+                </div>
+                <div class="rodape-alertas"><button onclick="cadastrar()">ok</button> </div>
+            </div>
+            <div class="alert alert-amg" id="alert2">
+                <div class="title-alert">Todos foram derrotados! Você venceu!</div>
+                <div class="div-imgs-alertas">
+                    <div class="imgAlert2"></div>
+                </div>
+                <div class="rodape-alertas"><button onclick="cadastrar()">ok</button> </div>
+            </div>
+        </div>
+        <div class="cabecalho">
+                <div class="div-imgs-personagens">
+                    <img id="buu" src="../img/buu-rosto.jpg" alt="" class="img-personagem">
+                    <img id="cell" src="../img/cell-rosto.png" alt="" class="img-personagem">
+                    <img id="black" src="../img/black-rosto.png" alt="" class="img-personagem">
+                    <img id="brolly" src="../img/brolly-rosto.jpg" alt="" class="img-personagem">
+                    <img id="freeza" src="../img/freeza-rosto.png" alt="" class="img-personagem">
+                    <img id="gohan" src="../img/gohan-rosto.png" alt="" class="img-personagem">
+                    <img id="vegeta" src="../img/vegeta-rosto.png" alt="" class="img-personagem">
+                    <img id="kuririn" src="../img/kuririn-rosto.png" alt="" class="img-personagem">
+                </div>
+                <div id="timer" class="timer">
+                    
+                </div>
+        </div>
+        <div id="tela">
+
+        </div>
         
     </body>
 </html>
 <script>
-    var movimentacao = setInterval(mover,1000);
-    function mover(){ 
-        var maxX = 95;
-        var minX = -2;
-        var movimentacaoX = Math.random() * maxX + minX;
-        
-        var maxY = 50;
-        var minY = 1;
-        var movimentacaoY = Math.random() * maxY + minY;
-
-        
-        tela.innerHTML = `
-        <button onclick="destruir()" style="position: fixed;">Mover</button>
-        <img src="../img/brolly.png" id="vilao"  style="transform:translate(${movimentacaoX}vw, ${movimentacaoY}vh); width:300px" />`
-
-        var vilao = document.getElementById('vilao');
-        vilao.style.animation = "aparecer 0.3s ease-in-out";
-        vilao.style.opacity = 1;
-
-        setTimeout(function() {
-            vilao.style.animation = "desaparecer 0.3s ease-in-out";
-            vilao.style.opacity = 0;
-        }, 500);
-        vilao.onclick = function(){
-            clearInterval(movimentacao);
-            vilao.style.opacity = 1;
-            vilao.style.filter = "grayscale(100%)";
+    alertasAbrir('alertViloes');
+    //vars de cadastro no banco
+    var statusBatalha = "";
+    var fk = sessionStorage.ID_USUARIO;
+    var timeSeg = 0;
+    var timeMin = 0;
+    var timer = document.getElementById('timer');
+    var baixas = 0;
+    var pontuacao = 0;
+    //vetor de imagens
+    var personagens = ["../img/brolly-inimigo.png","../img/buu-inimigo.png","../img/freeza-inimigo.png","../img/black-inimigo.png","../img/cell-inimigo.png","../img/vegeta-amigo.png","../img/kuririn-amigo.png","../img/gohan-amigo.png"];
+    var ultimaPosicao;
+    var limitePosicao = 8;
+    var movimentacao;
+    var timeInterval;
+    function batalhar(){
+        alertasFechar('alertViloes');
+        alertasFechar('alertTutorial');
+    
+        timeInterval = setInterval(function() {
+        if (timeSeg < 60) {
+            timer.innerHTML = "<h1>Tempo de batalha: " + timeMin + ":" + timeSeg + "</h1>";
+            timeSeg = timeSeg + 1;
+        } else {
+            timeSeg = 0;
+            timeMin++;
+            timer.innerHTML = "<h1>Tempo de batalha: " + timeMin + ":" + timeSeg + "</h1>";
+            timeSeg = timeSeg + 1;
         }
+        }, 1000);
+       
+        movimentacao = setInterval(mover,1000);
+
     }
+    function mover(){ 
+            posicao = parseInt(Math.random() * limitePosicao);
+            //se posição atual for igual a última posição sorteada, sorteia de novo
+            if(posicao == ultimaPosicao){
+                posicao = parseInt(Math.random() * limitePosicao);
+            }
+            
+            //maximo e minimo do eixo X
+            var maxX = 95;
+            var minX = -2;
+            var movimentacaoX = Math.random() * maxX + minX;
+            
+
+            //maximo e minimo do eixo Y
+            var maxY = 50;
+            var minY = 1;
+            var movimentacaoY = Math.random() * maxY + minY;
+    
+            
+            tela.innerHTML = `
+            <img class="personagens" src="${personagens[posicao]}" id="vilao"  style="transform:translate(${movimentacaoX}vw, ${movimentacaoY}vh); width:300px" />`
+    
+            var vilao = document.getElementById('vilao');
+            vilao.style.animation = "aparecer 0.3s ease-in-out";
+            vilao.style.opacity = 1;
+    
+            setTimeout(function() {
+                vilao.style.animation = "desaparecer 0.3s ease-in-out";
+                vilao.style.opacity = 0;
+            }, 500);
+            vilao.onclick = function(){
+                console.log(personagens[posicao].indexOf("amigo"));
+                if(personagens[posicao].indexOf("amigo") != -1){
+                    baixas++;
+                }
+                else{
+                    pontuacao++;
+                }
+                if(personagens[posicao].indexOf("buu") > -1){
+                    var buu = document.getElementById("buu");
+                    buu.style.filter = "grayscale(100%)";
+                }
+                else if(personagens[posicao].indexOf("cell") > -1){
+                    var cell = document.getElementById("cell");
+                    cell.style.filter = "grayscale(100%)";
+                }
+                else if(personagens[posicao].indexOf("black") > -1){
+                    var black = document.getElementById("black");
+                    black.style.filter = "grayscale(100%)";
+                }
+                else if(personagens[posicao].indexOf("brolly") > -1){
+                    var brolly = document.getElementById("brolly");
+                    brolly.style.filter = "grayscale(100%)";
+                }
+                else if(personagens[posicao].indexOf("freeza") > -1){
+                    var freeza = document.getElementById("freeza");
+                    freeza.style.filter = "grayscale(100%)";
+                }
+                else if(personagens[posicao].indexOf("gohan") > -1){
+                    var gohan = document.getElementById("gohan");
+                    gohan.style.filter = "grayscale(100%)";
+                }
+                else if(personagens[posicao].indexOf("vegeta") > -1){
+                    var vegeta = document.getElementById("vegeta");
+                    vegeta.style.filter = "grayscale(100%)";
+                }
+                else if(personagens[posicao].indexOf("kuririn") > -1){
+                    var kuririn = document.getElementById("kuririn");
+                    kuririn.style.filter = "grayscale(100%)";
+                }
+                vilao.style.opacity = 1;
+                vilao.style.filter = "grayscale(100%)";
+                vilao.style.animation = "desaparecer 3s ease-in-out";
+                // vilao.style.opacity = 0;
+                personagens.splice(posicao,1);
+                limitePosicao = limitePosicao-1;
+                var encontrouInimigo = false;
+    
+                for (var i = 0; i < limitePosicao - 1; i++) {
+                    if (personagens[i].includes("inimigo")) {
+                        encontrouInimigo = true;
+                        break;
+                    }
+                }
+    
+                if (!encontrouInimigo) {
+                    clearInterval(movimentacao);
+                    clearInterval(timeInterval);
+                    alert("ACABOU");
+                    console.log("BAIXAS: "+baixas);
+                    console.log("PONTUAÇÃO: "+pontuacao);
+                    statusBatalha = "Vencedor"
+                    alertasAbrir('alert2')
+                    
+                }
+                else if(baixas == 3){
+                    clearInterval(movimentacao);
+                    clearInterval(timeInterval);
+                    console.log("BAIXAS: "+baixas);
+                    console.log("PONTUAÇÃO: "+pontuacao);
+                    statusBatalha = "Perdedor";
+                    alertasAbrir('alert1')
+        
+                }
+            }
+            ultimaPosicao = posicao;
+        }
+        
+    //controle de dos alertas
+    function alertasAbrir(id){
+        idDiv = document.getElementById(id)
+        idDiv.className = 'alert';
+        idDiv.style.zIndex = 999;
+    }
+    function alertasFechar(id){
+        idDiv = document.getElementById(id)
+        idDiv.className = 'alert alert-amg';
+        idDiv.style.zIndex = 0;
+    }
+    function cadastrar() {
+
+// Enviando o valor da nova input
+fetch("/batalha/cadastrar", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        timeMinServer: timeMin,
+        timeSegServer: timeSeg,
+        pontuacaoServer: pontuacao,
+        baixasServer: baixas,
+        statusBatalhaServer: statusBatalha,
+        fkUsuarioServer: fk
+    })
+}).then(function (resposta) {
+
+    console.log("resposta: ", resposta);
+
+    if (resposta.ok) {
+        
+        setTimeout(() => {
+                    alert("AI PAPAI")
+                    window.location = "dashboard.html";
+                }, "1000")
+                
+        
+    } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+    }
+}).catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+
+});
+
+return false;
+}
+
 </script>

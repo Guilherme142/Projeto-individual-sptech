@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="../css/quiz.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <title>Quiz</title>
     </head>
     <body>
@@ -12,8 +13,10 @@
             <div class="container-nav"> 
                 <img src="../img/Dragon_Ball_logo.png" class="logo-navbar" alt="">
                 <ul class="navbar">
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li>Sair</li>
+                    <li><a href="campo-batalha.html">Torneio</a></li>
+                    <li><a href="dashboard.html">Dashboard Quiz</a></li>
+                    <li><a href="dashboard-batalha.html">Dashboard Torneio</a></li>
+                    <li><a href="../index.html">Sair</a></li>
                 </ul>
             </div>
         </header>
@@ -22,7 +25,7 @@
             <div class="bem-vindo"><h1 id="title_bemvindo"></h1></div>
             <div class="container-quiz">
                 <div class="div-quiz">
-                    <div class="nav-quiz">
+                    <div class="nav-quiz" id="btns-navegar">
                         <button value="1" id="btnNav1" onclick="navegacao(this)" class="btn-nav-selecionado">1</button>
                         <button value="2" id="btnNav2" onclick="navegacao(this)" class="btn-nav">2</button>
                         <button value="3" id="btnNav3" onclick="navegacao(this)" class="btn-nav">3</button>
@@ -31,6 +34,7 @@
                         <button value="6" id="btnNav6" onclick="navegacao(this)" class="btn-nav">6</button>
                         <button value="7" id="btnNav7" onclick="navegacao(this)" class="btn-nav">7</button>
                     </div>
+                    
                     <div class="pag1">
                         <div class="div-pergunta ">
                             <div class="pergunta-quiz">
@@ -150,6 +154,22 @@
                         </div>
                         <div class="botoes-nav"><button onclick="navegacao(this)" value="6">Anterior</button><button onclick="finalizarQuiz()">Finalizar</button></div>
                     </div>
+                    <div class="pag8">
+                        <div class="div-resultado">
+                            <div class="title-resultado">
+                                <h1 class="h1-resultado">Resultado do seu quiz</h1>
+                            </div>
+                            <div class="conteudo-resultado">
+                                <h1 class="resultado" id="resultado"></h1>
+                                <div class="div-resultado-img">
+                                    <img class="img-resultado" id="img_resultado" src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="botoes-nav btnresultado">
+                            <button class="btnresultadoClass"  onclick="window.location.reload()" >Refazer quiz</button>
+                            <button class="btnresultadoClass"  onclick="window.location.href = 'campo-batalha.html';" >Ir pro desafio2</button></div>
+                    </div>
                 </div>              
                 
             </div>
@@ -166,6 +186,9 @@
     var pag5 = document.querySelector(".pag5");
     var pag6 = document.querySelector(".pag6");
     var pag7 = document.querySelector(".pag7");
+    var pag8 = document.querySelector(".pag8");
+    var btnNavs = document.getElementById('btns-navegar');
+    var imgResultado = document.getElementById('img_resultado');
     var acertos = 0;
     var erros = 0;
     var respostas = [];
@@ -336,9 +359,29 @@
                         // cardErro.style.display = "block";
                         // cardErro.style.zIndex = "999";
                         // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-        
+                        if(acertos < 2){
+                            var mensagem = `Goku está chorando agora, você acertou apenas ${acertos}/7`;
+                            var src="../img/goku-chorando.gif";
+                        }
+                        else if(acertos < 4){
+                            var mensagem = `Puts, você é horrível acertou apenas ${acertos}/7`;
+                            var src = "../img/vegeta-chuva.gif";
+                        }
+                        else if(acertos < 6){
+                            var mensagem = `Tá jóia acertou ${acertos}/7`;
+                            var src = "../img/goku-joia.gif";
+                        }
+                        else{
+                            var mensagem = `Parabéns, você é incrível ${acertos}/7`;
+                            var src="../img/palmas-goku.gif";
+                        }
+
                         setTimeout(() => {
-                            alert("AI PAPAI")
+                            pag7.style.display = "none";
+                            pag8.style.display = "block";
+                            resultado.innerHTML = mensagem;
+                            imgResultado.src = src;
+                            btnNavs.style.display = "none";
                         }, "1000")
         
                         // limparFormulario();

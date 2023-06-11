@@ -1,268 +1,105 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Josefin+Sans:ital,wght@1,100&family=Lato:ital,wght@1,300&family=Montserrat:wght@200&family=Pacifico&display=swap');
 
-.personagens{
-    box-shadow:#000000 0px 90px 300px -15px inset;
-    padding-top: 25px;
+*{
+    font-family: "Bangers";
+    margin: 0;
+    padding: 0;
 }
-.div-title{
-    margin-top: 60px;
-    text-align: center;
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #114DB6;
+    box-shadow:#000000 0px 150px 300px -15px inset;
 }
-
-/* SECTION PERSONAGENS */
-.personagens{
-    box-shadow:#0a3785 0px 90px 300px -15px inset;
-    height: fit-content;
-}
-.div-personagens{
+.container-nav{
+    width: 100%;
+    border-bottom-left-radius: 20%;
+    background-color: #114DB6;
     display: flex;
+    justify-content: space-between;
+}
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vh;
     align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-}
-.div-img-fundo{
-    box-shadow:#000000 0px 50px 130px -15px inset;
-    border: 1px solid white;
-    width: 30vh;
-    height: 70vh;
-    padding: 15px;
-    transition: 1s;
-}
-.div-img-fundo:hover{
-    transform:scale(1.2);
-    z-index: 10;
-    cursor: pointer;
-}
-
-/* PERSONAGENS FOTOS *******************************/
-
-/* SAYAJIN *****************************************************/
-.fundo1{
-    background: url("../img/goku.jpg");
-    background-position: 50% 50%;
-    visibility: hidden;
-}
-.fundo2{
-    background: url("../img/vegeta.jpg");
-    background-position: 30% 20%;
-    visibility: hidden;
-}
-.fundo3{
-    background: url("../img/gohan.png");
-    background-color: #F68B1F;
-    background-repeat: no-repeat;
-    background-position: 80% -10%;
-    background-size: 35vh 120vh;
-    visibility: hidden;
-}
-.fundo4{
-    background: url("../img/trunks.png");
-    background-position: 50% -20%;
-    background-color: purple;
-    background-repeat: no-repeat;
-    background-size: 50vh 100vh;
-    visibility: hidden;
-}
-.fundo5{
-    background: url("../img/brolly.png"); 
-    background-position: 50% 50%;
-    background-color: rgb(29, 255, 29);
-    background-size: 45vh 80vh;
-    visibility: hidden;
-}
-.fundo6{
-    background: url("../img/goten.png"); 
-    background-position: 50% 50%;
-    background-color: red;
-    background-size: 55vh 80vh;
-    visibility: hidden;
-}
-.fundo7{
-    background: url("../img/vegeto.png");
-    background-position: 45% 40%;
-    background-color: yellow;
-    background-size: 55vh 90vh;
-    visibility: hidden;
-}
-.fundo8{
-    background: url("../img/gogeta.png"); 
-    background-color: rgb(170, 102, 0);
-    background-position: 30% 20%;
-    background-size: 40vh 80vh;
-    visibility: hidden;
-}
-.fundo9{
-    background: url("../img/black.png"); 
-    background-color: rgb(236, 0, 225);
-    background-position: 45% 20%;
-    background-size: 60vh 80vh;
-    visibility: hidden;
-}
-.fundo10{
-    background: url("../img/bardock.png"); 
-    background-color: rgb(0, 247, 255);
-    background-position: 50% 10%;
-    background-size: 60vh 90vh;
-    visibility: hidden;
-}
-.fundo11{
-    background: url("../img/bulma-removebg-preview.png"); 
-    background-color:rgb(236, 0, 225);
-    background-position: 3% 100%;
-    background-size: 110vh 95vh;
-    visibility: hidden;
-}
-.fundo12{
-    background: url("../img/kuririn.jpg"); 
-    background-color: red;
-    background-position: 50% -20%;
-    background-size: 50vh 90vh;
-    visibility: hidden;
-}
-.fundo13{
-    background: url("../img/mestrekame.png"); 
-    background-color: yellow;
-    background-position: 50% 70%;
-    background-size: 70vh 90vh;
-    visibility: hidden;
-}
-.fundo14{
-    background: url("../img/videl.png"); 
-    background-color: rgb(255, 187, 0);
-    background-position: 50% 10%;
-    background-size: 40vh 80vh;
-    visibility: hidden;
-}
-.fundo15{
-    background: url("../img/numero17.png"); 
-    background-position: 45% 10%;
-    background-color: rgb(21, 255, 0);
-    background-size: 60vh 90vh;
-    visibility: hidden;
-}
-.fundo16{
-    background: url("../img/tenshinhan.png"); 
-    background-color: rgb(105, 60, 0);
-    background-position: 50% -5%;
-    background-size: 40vh 90vh;
-    background-repeat: no-repeat;
-    visibility: hidden;
-}
-.fundo17{
-    background: url("../img/chichi.png"); 
-    background-color: rgb(17, 0, 255);
-    background-position: 50% 10%;
-    background-size: 50vh 90vh;
-    visibility: hidden;
-}
-.fundo18{
-    background: url("../img/mai.png"); 
-    background-color: rgb(255, 0, 170);
-    background-position: 30% 5%;
-    background-size: 60vh 90vh;
-    visibility: hidden;
-}
-.fundo19{
-    background: url("../img/numero18.png"); 
-    background-color: rgb(17, 0, 255);
-    background-position: 50% 80%;
-    background-size: 50vh 80vh;
-    visibility: hidden;
-}
-.fundo20{
-    background: url("../img/yamcha.jpg"); 
-    background-color: rgb(17, 0, 255);
-    background-position: 30% 10%;
-    background-size: 40vh 90vh;
-    visibility: hidden;
-}
-/* DIVINDADES *****************************************************/
-.fundo21{
-    background: url("../img/shenlongperso.png"); 
-    background-color:rgb(35, 0, 236);
-    background-position: 45% 40%;
-    background-size: 110vh 95vh;
-    visibility: hidden;
-}
-.fundo22{
-    background: url("../img/bills.png"); 
-    background-color: rgb(153, 0, 255);
-    background-position: 50% 50%;
-    background-size: 50vh 90vh;
-    visibility: hidden;
-}
-.fundo23{
-    background: url("../img/wis.png"); 
-    background-color: rgb(0, 217, 255);
-    background-position: 60% 20%;
-    background-size: 70vh 90vh;
-    visibility: hidden;
-}
-.fundo24{
-    background: url("../img/zeno.jpg"); 
-    background-color: rgb(255, 187, 0);
-    background-position: 50% 10%;
-    background-size: 40vh 80vh;
-    visibility: hidden;
-}
-.fundo25{
-    background: url("../img/daishi.jpg"); 
-    background-position: 50% 10%;
-    background-color: rgb(116, 8, 83);
-    background-size: 50vh 90vh;
-    visibility: hidden;
-}
-.fundo26{
-    background: url("../img/veiokaioshin.png"); 
-    background-color: rgb(105, 60, 0);
-    background-position: 50% -5%;
-    background-size: 60vh 90vh;
-    background-repeat: no-repeat;
-    visibility: hidden;
-}
-.fundo27{
-    background: url("../img/kaioh.png"); 
-    background-color: rgb(17, 0, 255);
-    background-position: 50% 50%;
-    background-size: 50vh 90vh;
-    visibility: hidden;
-}
-.fundo28{
-    background: url("../img/kaioshin.png"); 
-    background-color: rgb(255, 0, 170);
-    background-position: 50% 20%;
-    background-size: 60vh 90vh;
-    visibility: hidden;
-}
-.fundo29{
-    background: url("../img/supershen.png"); 
-    background-color: yellow;
-    background-position: 50% 50%;
-    background-size: 80vh 90vh;
-    visibility: hidden;
-}
-.fundo30{
-    background: url("../img/kamisama.png"); 
-    background-color: rgb(0, 255, 34);
-    background-position: 50% 20%;
-    background-size: 50vh 80vh;
-    visibility: hidden;
-}
-
-.img-personagem{
-    width: 30vh;
-    height: 70vh;
-}
-
-.ver-mais-personagens{
-    background-color: aqua;
+    color: white;
+    list-style: none;
+    padding: 5px;
     
 }
-.div-btn-personagens{
-    padding-top: 10vh;
+.navbar li{
+    padding: 5px;
+    font-size: 20px;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+}
+.navbar li:hover{
+    cursor: pointer;
+    background-color: #083788;
+    border-radius: 8%;
+    transition: 2s;
+}
+.logo-navbar{
+    width: 300px;
+    height: 100px;
+    margin-left: 5vh;
+}
+.section-personagens{
     width: 100%;
     height: fit-content;
+}
+.div-title{
+    width: 100%;
+    height: 17vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.title{
+    color: white;
+    font-size: 8vh;
+}
+.div-personagens{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10vh;
+}
+.div-img-personagem{
+    width: 50vh;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.img-personagem{
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    border: #083788 3px solid;
+    box-shadow: #001b49 -5px 3px, #0648b9 -10px 6px;
+}
+.img-personagem:hover{
+    box-shadow: #001b49 0px 45px 45px, #0648b9 0px -12px 30px,#114DB6 0px -3px 5px;
+    cursor: pointer;
+}
+.div-img-personagem:hover{
+    transform: scale(1.2);
+    cursor: default;
+}
+.title-personagem{
+    text-align: center;
+    font-size: 5vh;
+    margin-top: 1vh;
+}
+.p-personagens{
+    font-size: 2.5vh;
 }

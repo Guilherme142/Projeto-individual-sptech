@@ -5,6 +5,9 @@
     margin: 0;
     padding: 0;
 }
+button{
+    cursor: pointer;
+}
 body{
     overflow: hidden;
     background-color: #114DB6;
@@ -61,10 +64,6 @@ body{
     width: 120vh;
     padding: 5vh;
     border-radius: 10px;
-    /* box-shadow: #ffffff 60px 20px 300px 0px inset,#fafdfa 0px 60px 100px 50px inset,#4e8fff 0 -80px 50px 0 inset;
-     */
-     background-color: #fff;
-    border: #000000 5px solid;
 }
 .grafico1{
     display: flex;
@@ -84,11 +83,11 @@ body{
     color: white;
 }
 .container-left{
-    z-index: 2;
+    z-index: 98;
     height: 100vh;
     width: 30vh;
     background-color: #F68D2E;
-    background: linear-gradient(180deg, #000000,#492200, #c05a00 ,#da6703 , #F68D2E);
+    background: linear-gradient(180deg, #ff7b00,#813c00, #442000);
     box-shadow:#000000 0px 20px 80px -15px inset,#005eff 0px 20px 80px -15px ;
     position: absolute;
     top: 0;
@@ -167,4 +166,82 @@ body{
     justify-content: center;
     align-items: center;
     color: #fff;
+}
+
+.fundo-desempenho{
+    box-shadow:#000000 0px 150px 300px -15px inset;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #114DB6;
+    display: none;
+}
+.div-desempenho{
+    margin-left: 20vh;
+    width: 150vh;
+    height: 75vh;
+    background: linear-gradient(90deg, #000000, #114DB6 , #4589ff);
+    border-radius: 10px;
+    box-shadow: 0 50px 100px -15px black inset;
+}
+.title-desempenho{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 60px;
+    position: relative;
+}
+.btnSair{
+    position: absolute;
+    right: -5px;
+    top: -10px;
+    font-size: 20px;
+    border-radius: 40%;
+    background-color: red;
+    color: white;
+    box-shadow: #000000 inset 0 5px 10px -5px;
+    padding: 2vh;
+}
+.graficos-desempenho{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    
+}
+.grafico-desempenho{
+background: linear-gradient(120deg, #000000, #114DB6 , #4589ff);
+    border-radius: 10px;
+    padding: 5px;
+    width: 70vh;
+    margin-right: 1vh;
+    margin-bottom: 30vh;
+    border: 1px solid black;
+}
+
+.title-graficos{
+    color: white;
+    width: 100%; 
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 20px;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.grafico-desempenho2{
+    width: 90vh;
+    margin-top: 3vh;
+}
+.btnDesemp{
+    background: linear-gradient(90deg, #000000 , #6703da);
 }
