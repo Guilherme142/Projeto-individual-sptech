@@ -13,11 +13,15 @@ body{
     box-shadow:#000000 0px 150px 300px -15px inset;
 }
 .container-nav{
+    z-index:999;
     width: 100%;
+    height: 80px;
     border-bottom-left-radius: 20%;
     background-color: #114DB6;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    top:0;
 }
 .navbar{
     display: flex;
@@ -27,7 +31,7 @@ body{
     color: white;
     list-style: none;
     padding: 5px;
-    
+    position: relative;
 }
 .navbar li{
     padding: 5px;
@@ -49,12 +53,13 @@ body{
     margin-left: 5vh;
 }
 .section-personagens{
+    top: 0;
     width: 100%;
     height: fit-content;
 }
 .div-title{
     width: 100%;
-    height: 17vh;
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +75,7 @@ body{
     flex-direction: row;
     justify-content: space-around;
     margin-top: 10vh;
+    color: white;
 }
 .div-img-personagem{
     width: 50vh;
@@ -90,16 +96,75 @@ body{
 .img-personagem:hover{
     box-shadow: #001b49 0px 45px 45px, #0648b9 0px -12px 30px,#114DB6 0px -3px 5px;
     cursor: pointer;
+    transition: 2s;
 }
 .div-img-personagem:hover{
     transform: scale(1.2);
     cursor: default;
+    transition: 2s;
 }
 .title-personagem{
     text-align: center;
     font-size: 5vh;
-    margin-top: 1vh;
 }
 .p-personagens{
     font-size: 2.5vh;
+}
+.div-verMais{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.vermais-personagem{
+   width: 70vh;
+   height: 70vh;
+   background-color: #fff; 
+   border-radius: 10px;
+   position: fixed;
+   z-index: 999;
+}
+.fechar-verMais{
+    width: 100%;
+    height: 5vh;
+    background-color: #0648b9;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+}
+.btn-verMais{
+    background-color: red;
+    color: white;
+    position: absolute;
+    right: -3vh;
+    top: -2vh;
+    border-radius: 50px;
+    width: 7vh;
+    height: 7vh;
+    font-size: 40px;
+    cursor: pointer;
+}
+.title-modal{
+    width: 100%;
+    height: 5vh;
+    margin-top: 4vh;
+    font-size: 25px;
+    text-align: center;
+}
+.conteudo-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+}
+.img-modal{
+    max-width: 40vh;
+    max-height: 50vh;
 }

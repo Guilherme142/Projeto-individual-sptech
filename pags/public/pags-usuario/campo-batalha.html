@@ -105,7 +105,7 @@
         }
         }, 1000);
        
-        movimentacao = setInterval(mover,1000);
+        movimentacao = setInterval(mover,500);
 
     }
     function mover(){ 
@@ -138,6 +138,7 @@
                 vilao.style.animation = "desaparecer 0.3s ease-in-out";
                 vilao.style.opacity = 0;
             }, 500);
+           
             vilao.onclick = function(){
                 console.log(personagens[posicao].indexOf("amigo"));
                 if(personagens[posicao].indexOf("amigo") != -1){

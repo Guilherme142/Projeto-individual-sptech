@@ -96,7 +96,7 @@
 
                   resultadoQuizGeral.json().then(jsonMelhoresQuiz => {
                     var campeao = jsonMelhoresQuiz[0].nome;
-                    var menorPontuacao = jsonMelhoresQuiz[4].nome;
+                    var menorPontuacao = jsonMelhoresQuiz[jsonMelhoresQuiz.length - 1].nome;
                     info1.innerHTML = "Líder : "+ campeao;
                     info2.innerHTML = "Menor desempenho do ranking no torneio: "+menorPontuacao;
                      

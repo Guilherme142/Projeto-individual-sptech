@@ -45,6 +45,7 @@
             <a href="quiz.html" class="btn-lateral">Quiz</a>
             <a href="dashboard-batalha.html" class="btn-lateral">Gráfico torneio</a>
             <a href="campo-batalha.html" class="btn-lateral">Torneio</a>
+            
         </div>
       </div>
         <div id="section" class="section">
@@ -119,7 +120,7 @@
                   resultadoQuizGeral.json().then(jsonMelhoresQuiz => {
                     var maiorPontuacao = jsonMelhoresQuiz[0].acertos;
                     var campeao = jsonMelhoresQuiz[0].nome;
-                    var menorPontuacao = jsonMelhoresQuiz[4].acertos;
+                    var menorPontuacao = jsonMelhoresQuiz[jsonMelhoresQuiz.length-1].acertos;
                     info1.innerHTML = "Líder: "+ campeao;
                     info2.innerHTML = "Maior pontuação do ranking: "+maiorPontuacao;
                     info3.innerHTML = "Menor pontuação do Ranking: "+menorPontuacao;
@@ -233,13 +234,13 @@
               console.log("ESTOU NO THEN DO NOVA FUnCTIONS()! esse é o desempenho: "+ resultadoQuizDesempenho)
             
               if (resultadoQuizDesempenho.ok) {
-                  console.log("DESEMPENHO AI APAPAIS:"+resultadoQuizDesempenho);
                   console.log("TAMANHO DO DESEMPENHO"+resultadoQuizDesempenho.length);
                   resultadoQuizDesempenho.json().then(jsonQuizDesempenho => {
                       for(var i = 0; i < jsonQuizDesempenho.length; i++){
                         console.log(jsonQuizDesempenho);
                         dados.push(jsonQuizDesempenho[i].acertos);
                         dados2.push(jsonQuizDesempenho[i].erros);
+
                         var dataQuiz = new Date(jsonQuizDesempenho[i].dataQuiz);
                         var diaMesFormatado= dataQuiz.toLocaleDateString("pt-BR", {
                           day: "numeric",
