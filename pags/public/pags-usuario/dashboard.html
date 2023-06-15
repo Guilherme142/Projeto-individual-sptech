@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/dashboard.css">
-        <title>AquaTech | Dashboards</title>
+        <title>Dashboard</title>
         <!-- scripts do Chart.js - 2022-1 -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
@@ -14,7 +14,7 @@
      
     <body>
       <div class="fundo-desempenho" id="desempenho">
-          <div class="div-desempenho">
+          <div class="div-desempenho" id="desempenho2" >
             <div class="title-desempenho">
               Seu desempenho
               <button class="btnSair" onclick="fecharDesempenho()">X</button>
@@ -45,6 +45,8 @@
             <a href="quiz.html" class="btn-lateral">Quiz</a>
             <a href="dashboard-batalha.html" class="btn-lateral">Gráfico torneio</a>
             <a href="campo-batalha.html" class="btn-lateral">Torneio</a>
+            <a href="../login.html" class="btnSairDash">sair</a>
+            
             
         </div>
       </div>
@@ -410,6 +412,7 @@ var desempenho = document.getElementById('desempenho');
 function abrirDesempenho(){
   desempenho.style.zIndex = 97;
   desempenho.style.display = 'flex';
+  
 }
 function fecharDesempenho(){
   desempenho.style.zIndex = 0;

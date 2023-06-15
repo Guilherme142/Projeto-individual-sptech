@@ -6,16 +6,15 @@
         <link rel="stylesheet" href="css/personagens.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://unpkg.com/scrollreveal"></script>
-        <title>Home</title>
+        <title>Personagens</title>
     </head>
     <body>
         <header>
             <div class="container-nav"> 
                 <img src="img/Dragon_Ball_logo.png" class="logo-navbar" alt="">
                 <ul class="navbar">
-                    <li>Home</li>
-                    <li><a href="#apresentacao">Apresentação</a></li>
-                    <li><a href="personagens.html">Personagens</a></li>
+                    <li><a href="index.html"> Home </a></li>
+                    <li class="pag-selecionada" >Personagens</li>
                     <li><a id="cadastro" href="login.html">Cadastrar</a></li>
                     <li><a id="login" href="login.html">Login</a></li>
                 </ul>
@@ -265,12 +264,12 @@
                 <div class="div-img-personagem">
                     <img src="img/goku-black.jpg" class="img-personagem" id="black" alt="">
                     <h2 class="title-personagem">Goku Black</h2>
-                    <p class="p-personagens">Black é um vilão de Dragon ball super, ele surge através de uma revolta de um </p>
+                    <p class="p-personagens">É uma versão maligna de Goku proveniente de uma linha do tempo alternativa. Possui aparência idêntica a Goku, mas com pele escura e um brinco Potara. Black possui força e habilidades de luta sobre-humanas, além de poder viajar no tempo. Seu objetivo é exterminar todos os mortais e obter uma nova ordem universal. Ele é um dos inimigos mais poderosos enfrentados por Goku e seus aliados. </p>
                 </div>
                 <div class="div-img-personagem">
                     <img src="img/brolly-personagens.jpg" class="img-personagem" id="brolly" alt="">
                     <h2 class="title-personagem">Brolly</h2>
-                    <p class="p-personagens">Goksoskoskoskokoskskoskksosknncjcjncdjncjdjncncdjncdjccnjdnjnjcnjdjcdncncdncdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddcncdndcn</p>
+                    <p class="p-personagens">Brolly é uma anomalia entre os saiyajins, onde o mesmo consegue evoluir seu Poder em questão de segundos, porém quanto mais alto seu poder mais consciência ele tem de seus atos.</p>
                 </div>
                 <div class="div-img-personagem">
                     <img src="img//jiren.jpg" class="img-personagem" id="jiren" alt="">
@@ -279,6 +278,14 @@
                 </div>  
             </div>  
         </div>
+        <footer>
+            <a href="https://outlook.office.com/mail/">
+                <img src="img/logo-email.png" alt="">
+            </a>
+            <a href="https://github.com/Guilherme142/Projeto-individual-sptech">
+                <img src="img/logo-git.png" alt="">
+            </a>
+        </footer>
     </body>
 </html>
 <script>
@@ -675,4 +682,15 @@
                 i = 0
             }
         }
+
+    linkCadastro = document.getElementById("cadastro");
+    linkLogin = document.getElementById("login");
+    var tela;
+    linkCadastro.addEventListener("click",function(){
+        localStorage.setItem("tela","Cadastro");
+    });
+
+    linkLogin.addEventListener("click",function(){
+        localStorage.setItem("tela","Login");
+    });
 </script>

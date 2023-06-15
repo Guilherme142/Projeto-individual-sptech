@@ -16,11 +16,10 @@
             <div class="container-nav"> 
                 <img src="./img/Dragon_Ball_logo.png" class="logo-navbar" alt="">
                 <ul class="navbar">
-                    <li>Home</li>
-                    <li>Apresentação</li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="personagens.html">Personagens</a></li>
-                    <li>Cadastrar</li>
-                    <li>Login</li>
+                    <li id="liCadastro">Cadastrar</li>
+                    <li id="liLogin">Login</li>
                 </ul>
             </div>
         </header>
@@ -39,7 +38,7 @@
                     </div>
                     <div class="login" id="login">
                         <input class="inputs" type="text" id="login_email" placeholder="Email">
-                        <input class="inputs" type="text" id="login_senha" placeholder="Senha">
+                        <input class="inputs" type="password" id="login_senha" placeholder="Senha">
                         <button class="btn" onclick="entrar()">Entrar</button>
                     </div>
                     <div class="login cadastro" id="cadastro">
@@ -49,8 +48,8 @@
                         <div class="div-inputs">
                             <input class="inputs" type="text" placeholder="nome" id="nome_input">
                             <input class="inputs" type="text" placeholder="Email" id="email_input">
-                            <input class="inputs" type="text" placeholder="Senha" id="senha_input">
-                            <input class="inputs" type="text" placeholder="Senha confirmação" id="confirmacao_senha_input">
+                            <input class="inputs" type="password" placeholder="Senha" id="senha_input">
+                            <input class="inputs" type="password" placeholder="Senha confirmação" id="confirmacao_senha_input">
                             <button class="btn" onclick="cadastrar()"> Cadastrar</button>
                             <div id="div_aguardar" class="loading-div">
                                 <img src="./img/circle-loading.gif  " id="loading-gif">
@@ -70,11 +69,13 @@
 <script>
     var divImg = document.getElementById("div_img");
     var botao = document.getElementById("btn");
+    var liCadastro = document.getElementById("liCadastro");
+    var liLogin = document.getElementById("liLogin");
+    
      if(window.localStorage.getItem("tela") != null){
         var controle = window.localStorage.getItem("tela");
-        localStorage.removeItem("tela");
         if(controle == "Login"){
-        
+            btnNome = "Fazer Login"
             divImg.style.animation = "loginCadastro2 1s"
             divImg.style.right = 0;
             divImg.style.borderTopRightRadius = "5%";
@@ -82,19 +83,27 @@
             divImg.style.borderTopLeftRadius = "0";
             divImg.style.borderBottomLeftRadius = "0";
             botao.textContent = "Criar conta";
-        
+           
+            liLogin.className = "pag-selecionada";
+            
         }
         else if(controle == "Cadastro"){
-
+            btnNome = "Criar Conta"
             divImg.style.animation = "loginCadastro 1s"
             divImg.style.left = 0;
             divImg.style.borderTopRightRadius = "0";
             divImg.style.borderTopRightRadius = "0";
             divImg.style.borderTopLeftRadius = "5%";
             divImg.style.borderBottomLeftRadius = "5%";
-            botao.textContent = "Fazer Login"
+            botao.textContent = "Fazer Login";
+            liLogin.className = "";
+            liCadastro.className = "pag-selecionada";
         }
     }
+    else{
+        abrirCadastro() 
+    }
+
     function abrirCadastro(){
   
         if (divImg.style.left == "0px") {
@@ -106,6 +115,9 @@
             divImg.style.borderTopLeftRadius = "0";
             divImg.style.borderBottomLeftRadius = "0";
             botao.textContent = "Criar Conta";
+            liCadastro.className = "";
+            liLogin.className = "pag-selecionada"
+            
         } else {
             divImg.style.animation = "loginCadastro 1s"
             divImg.style.right = "";
@@ -115,6 +127,8 @@
             divImg.style.borderTopLeftRadius = "5%";
             divImg.style.borderBottomLeftRadius = "5%";
             botao.textContent = "Fazer Login";
+            liLogin.className = "";
+            liCadastro.className = "pag-selecionada";
         }
     }
     function cadastrar() {

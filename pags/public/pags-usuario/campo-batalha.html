@@ -8,11 +8,9 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <title>Batalha</title>
     </head>
-
     <body>
-
-        <div class="div-alertas">     
-            <div class="alert alert-amg" id="alertViloes"> 
+        <div class="div-alertas">
+            <div class="alert alert-amg" id="alertViloes">
                 <div class="title-alert">Derrote os seguinte vilões no menor período de tempo.</div>
                 <div class="title-alert" style="color: red;">OBS* cuidado com seus aliados.</div>
                 <div class="div-imgs-alertas">
@@ -22,55 +20,97 @@
                     <div class="img-viloes brolly-vilao"></div>
                     <div class="img-viloes freeza-vilao"></div>
                 </div>
-                <div class="rodape-alertas"><button onclick="alertasAbrir('alertTutorial')">ok</button> </div>
+                <div class="rodape-alertas">
+                    <button onclick="alertasAbrir('alertTutorial')">ok</button>
+                </div>
             </div>
             <div class="div-alertas">
-
-                <div class="alert alert-amg" id="alertTutorial"> 
+                <div class="alert alert-amg" id="alertTutorial">
                     <div class="title-alert">Para derrotar os vilões basta golpea-los com o cursor do mouse</div>
                     <div class="title-alert" style="color: red;">OBS* Seus aliados também são derrotados caso você os golpeie por engano.</div>
                     <div class="div-imgs-alertas">
                         <div class="tutorial"></div>
                     </div>
-                    <div class="rodape-alertas"><button onclick="batalhar()">ok</button> </div>
+                    <div class="rodape-alertas">
+                        <button onclick="batalhar()">ok</button>
+                    </div>
                 </div>
             </div>
-            <div class="alert alert-amg" id="alert1"> 
+            <div class="alert alert-amg" id="alert1">
                 <div class="title-alert">Você derrotou todos os seus aliados</div>
                 <div class="div-imgs-alertas">
                     <div class="imgs-alert img1"></div>
                     <div class="imgs-alert img2"></div>
                     <div class="imgs-alert img3"></div>
                 </div>
-                <div class="rodape-alertas"><button onclick="cadastrar()">ok</button> </div>
+                <div class="rodape-alertas">
+                    <button onclick="cadastrar()">ok</button>
+                </div>
             </div>
             <div class="alert alert-amg" id="alert2">
                 <div class="title-alert">Todos foram derrotados! Você venceu!</div>
                 <div class="div-imgs-alertas">
                     <div class="imgAlert2"></div>
                 </div>
-                <div class="rodape-alertas"><button onclick="cadastrar()">ok</button> </div>
+                <div class="rodape-alertas">
+                    <button onclick="cadastrar()">ok</button>
+                </div>
             </div>
         </div>
         <div class="cabecalho">
-                <div class="div-imgs-personagens">
-                    <img id="buu" src="../img/buu-rosto.jpg" alt="" class="img-personagem">
-                    <img id="cell" src="../img/cell-rosto.png" alt="" class="img-personagem">
-                    <img id="black" src="../img/black-rosto.png" alt="" class="img-personagem">
-                    <img id="brolly" src="../img/brolly-rosto.jpg" alt="" class="img-personagem">
-                    <img id="freeza" src="../img/freeza-rosto.png" alt="" class="img-personagem">
-                    <img id="gohan" src="../img/gohan-rosto.png" alt="" class="img-personagem">
-                    <img id="vegeta" src="../img/vegeta-rosto.png" alt="" class="img-personagem">
-                    <img id="kuririn" src="../img/kuririn-rosto.png" alt="" class="img-personagem">
-                </div>
-                <div id="timer" class="timer">
-                    
-                </div>
+            <div class="div-imgs-personagens">
+                <img
+                    id="buu"
+                    src="../img/buu-rosto.jpg"
+                    alt=""
+                    class="img-personagem"
+                >
+                <img
+                    id="cell"
+                    src="../img/cell-rosto.png"
+                    alt=""
+                    class="img-personagem"
+                >
+                <img
+                    id="black"
+                    src="../img/black-rosto.png"
+                    alt=""
+                    class="img-personagem"
+                >
+                <img
+                    id="brolly"
+                    src="../img/brolly-rosto.jpg"
+                    alt=""
+                    class="img-personagem"
+                >
+                <img
+                    id="freeza"
+                    src="../img/freeza-rosto.png"
+                    alt=""
+                    class="img-personagem"
+                >
+                <img
+                    id="gohan"
+                    src="../img/gohan-rosto.png"
+                    alt=""
+                    class="img-personagem"
+                >
+                <img
+                    id="vegeta"
+                    src="../img/vegeta-rosto.png"
+                    alt=""
+                    class="img-personagem"
+                >
+                <img
+                    id="kuririn"
+                    src="../img/kuririn-rosto.png"
+                    alt=""
+                    class="img-personagem"
+                >
+            </div>
+            <div id="timer" class="timer"></div>
         </div>
-        <div id="tela">
-
-        </div>
-        
+        <div id="tela"></div>
     </body>
 </html>
 <script>
@@ -105,7 +145,7 @@
         }
         }, 1000);
        
-        movimentacao = setInterval(mover,500);
+        movimentacao = setInterval(mover,1000);
 
     }
     function mover(){ 
@@ -253,7 +293,7 @@ fetch("/batalha/cadastrar", {
     if (resposta.ok) {
         
         setTimeout(() => {
-                    alert("AI PAPAI")
+                    
                     window.location = "dashboard.html";
                 }, "1000")
                 
@@ -268,5 +308,4 @@ fetch("/batalha/cadastrar", {
 
 return false;
 }
-
 </script>

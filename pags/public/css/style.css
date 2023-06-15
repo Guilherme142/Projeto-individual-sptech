@@ -45,6 +45,10 @@ body{
     border-radius: 8%;
     transition: 2s;
 }
+.pag-selecionada{
+    background-color: #083788;
+    border-radius: 8%;
+}
 .logo-navbar{
     width: 300px;
     height: 100px;
@@ -131,12 +135,13 @@ body{
 }
 .sub-div-apresentacao{
     width: 50%;
-    height: 100%;
+    height: 120%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 .text-apresentacao{
     padding-left: 50px;
 }
@@ -155,6 +160,7 @@ body{
 .p-img{
     padding-top: 10px;
 }
+
 .p-apresentacao,.img-apresentacao,.p-img{
     visibility: hidden;
 }
@@ -173,3 +179,19 @@ body::-webkit-scrollbar {
     border: 3px solid orange;  
   }
    */
+
+   footer{
+    width: 100%;
+    height: 25vh;
+    background: linear-gradient(90deg, #000000,#083788, #114DB6);
+    border-top: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+   }
+   footer img{
+    max-width: 20vh;
+    height: 10vh;
+    cursor: pointer;
+   }

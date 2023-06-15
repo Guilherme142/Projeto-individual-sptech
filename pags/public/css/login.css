@@ -218,4 +218,7 @@
     font-size: 20px;
   }
 
- 
+  .pag-selecionada{
+    background-color: #083788;
+    border-radius: 8%;
+}
