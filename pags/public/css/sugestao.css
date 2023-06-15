@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Josefin+Sans:ital,wght@1,100&family=Lato:ital,wght@1,300&family=Montserrat:wght@200&family=Pacifico&display=swap');
 
 *{
@@ -5,24 +6,26 @@
     margin: 0;
     padding: 0;
 }
-button{
-    cursor: pointer;
-}
 body{
+    margin: 0;
+    padding: 0;
     overflow: hidden;
     background-color: #114DB6;
     box-shadow:#000000 0px 150px 300px -15px inset;
-    position: relative;
-
 }
 .container-nav{
+    z-index:999;
     width: 100%;
     height: 80px;
-    background-color: transparent;
-    z-index: 999;
+    border-bottom-left-radius: 20%;
+    background-color: #114DB6;
     display: flex;
-    justify-content: center;
-    
+    justify-content: space-between;
+    top:0;
+}
+.pag-selecionada{
+    background-color: #083788;
+    border-radius: 8%;
 }
 .navbar{
     display: flex;
@@ -32,7 +35,7 @@ body{
     color: white;
     list-style: none;
     padding: 5px;
-    
+    position: relative;
 }
 .navbar li{
     padding: 5px;
@@ -41,11 +44,10 @@ body{
 .navbar a{
     color: white;
     text-decoration: none;
-    
 }
 .navbar li:hover{
     cursor: pointer;
-    background-color: #8a4102;
+    background-color: #083788;
     border-radius: 8%;
     transition: 2s;
 }
@@ -53,35 +55,73 @@ body{
     width: 300px;
     height: 100px;
     margin-left: 5vh;
-    z-index: 97;
 }
-.section{
+.section-sugestao{
     width: 100%;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.div-comentarios{
+    width: 80vh;
+    height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 2vh;
+}
+.caixas{
+    width: 75vh;
+    height: 15vh;
+    margin: 1vh;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 0 30px 60px -15px inset black;
+    display: flex;
+    flex-direction: column;
+    
+}
+.email{
+    width: 100%;
+    height: 5vh;
+    text-align: center;
+    color: white;
+}
+.conteudo{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
 
 }
-.grafico-geral{
-    width: 120vh;
-    padding: 5vh;
-    border-radius: 10px;
+.title-sugestao{
+    width: 100%;
+    height: 10vh;
+    text-align: center;
 }
-.grafico1{
+.title-sugestao p{
+    margin-top: 2vh;
+   font-size: 10vh;
+   color: white;
+}
+
+.div-input{
+    width: 100%;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-    width: 100%;
+}
+.div-input input, button{
+    margin: 1vh;
+    width: 50vh;
+    height: 8vh;
+}
 
-}
-.title-grafico-geral{
-    margin-top: 5vh;
-    text-align: center;
-    color: white;
-    width: 100%;
-}
-#myChartCanvas1{
-    color: white;
-}
 .container-left{
     z-index: 98;
     height: 100vh;
@@ -104,7 +144,7 @@ body{
     height: 30vh;
 }
 .dados-user{
-    height: 70vh;
+    height: 65vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -140,121 +180,10 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 25vh;
+    height: 30vh;
     font-size: 40px;
     color: white;
 }
-.container-right{
-    height: 100vh;
-    width: 35vh;
-    position: absolute;
-    top: 6vh;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.infos{
-    width: 80%;
-    height: 20vh;
-    background-color: #0753d6;
-    margin-top: 2vh;
-    border-radius: 10px;
-    border: 2px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 15px;
-}
-
-.fundo-desempenho{
-    box-shadow:#000000 0px 150px 300px -15px inset;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    background-color: #114DB6;
-    display: none;
-}
-.div-desempenho{
-    margin-left: 20vh;
-    width: 150vh;
-    height: 75vh;
-    background: linear-gradient(90deg, #000000, #114DB6 , #4589ff);
-    border-radius: 10px;
-    box-shadow: 0 50px 100px -15px black inset;
-}
-.title-desempenho{
-    width: 100%;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 60px;
-    position: relative;
-}
-.btnSair{
-    position: absolute;
-    right: -5px;
-    top: -10px;
-    font-size: 20px;
-    border-radius: 40%;
-    background-color: red;
-    color: white;
-    box-shadow: #000000 inset 0 5px 10px -5px;
-    padding: 2vh;
-}
-.graficos-desempenho{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; 
-    
-}
-.grafico-desempenho{
-background: linear-gradient(120deg, #000000, #114DB6 , #4589ff);
-    border-radius: 10px;
-    padding: 5px;
-    width: 70vh;
-    margin-right: 1vh;
-    margin-bottom: 30vh;
-    border: 1px solid black;
-}
-
-.title-graficos{
-    color: white;
-    width: 100%; 
-    height: 5vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 20px;
-    align-items: center;
-    margin-top: 5vh;
-}
-
-.grafico-desempenho2{
-    width: 90vh;
-    margin-top: 3vh;
-}
-.btnDesemp{
-    background: linear-gradient(90deg, #000000 , #6703da);
-}
-.btn-lateral{
-    font-size: 15px;
-}
-#nome_user{
-    text-align: center;
-    font-size: 25px;
-
-}
-
 .btnSairDash{
     width: 18vh;
     height: 10vh;
@@ -272,6 +201,16 @@ background: linear-gradient(120deg, #000000, #114DB6 , #4589ff);
     box-shadow: #000000 0 20px 40px -10px inset;
     background: linear-gradient(90deg, #000000, #f50202 , #e70800);
 }
-.title-desempenho {
-    margin-top: 5vh;
+.btnSug{
+    color: black;
+    border: 1px solid #000000;
+    cursor: pointer;
+    box-shadow: #000000 0 20px 40px -10px inset;
+    background: linear-gradient(90deg, #080e61, #0051ff , #4589ff);
+}
+.btnSug:hover{
+    transition: 0.5s;
+    color: #fff;
+    background-color: #114DB6;
+    border: 2px solid;
 }

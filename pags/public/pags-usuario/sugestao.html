@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="../css/sugestao.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <title>Sugestões</title>
+    </head>
+    <body class="body2">
+        
+        <div class="container-left">
+            <div class="nome-user" id="nome_user">
+    
+            </div>
+            <div class="dados-user">
+              
+                <a href="quiz.html" class="btn-lateral">Quiz</a>
+                <a href="dashboard.html" class="btn-lateral">Gráfico Quiz</a>
+                <a href="dashboard-batalha.html" class="btn-lateral">Gráfico Torneio</a>
+                <a href="campo-batalha.html" class="btn-lateral">Torneio</a>
+                <a href="../login.html" class="btnSairDash">sair</a>
+            </div>
+          </div>
+        <div class="div-input">
+            <input type="text" id="sugestao"><button class="btnSug" onclick="cadastrar()">Sugerir</button>
+        </div>
+        <div class="section-sugestao">
+            <div class="title-sugestao"><p>Sugestões</p></div>
+            <div id="coments" class="div-comentarios">
+
+
+            </div>
+        </div>
+        
+
+   
+</body>
+</html>
+<script>
+    nome_user.innerHTML = "Olá " + sessionStorage.NOME_USUARIO;
+    var fkVar = sessionStorage.ID_USUARIO;
+    var input = document.getElementById("sugestao");
+    var intervalo = setInterval(pesquisar,100);
+    function pesquisar(){
+
+        fetch("/sugestao/consultar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+        
+                    fkServer: fkVar
+                    
+                })
+            }).then(function (resposta) {
+    
+                console.log("resposta: ", resposta);
+    
+                if (resposta.ok) {
+                    resposta.json().then(sugestoes => {
+                        console.log(sugestoes);
+                        console.log("TAMANHO " + sugestoes.length);
+                        console.log(JSON.stringify(sugestoes));
+                        if(sugestoes.length == 0 ){
+
+                            console.log(sugestoes)
+                            input.disabled = false;
+                        }
+                        else{
+                            console.log(sugestoes)
+                            input.disabled = true;
+                            clearInterval(intervalo)
+                        }
+                      });
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+              
+            });
+    }
+
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var descVar =   sugestao.value;
+
+
+
+        // Enviando o valor da nova input
+        fetch("/sugestao/cadastrar/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                descServer: descVar,
+                fkServer: fkVar
+                
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                setTimeout(() => {
+
+                    window.location.reload();
+                }, "2000")
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+               
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+          
+        });
+
+        return false;
+    }
+
+    // function comentarios(){
+
+    //     fetch("/sugestao/consultaGeral", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json"
+    //             },
+    //             body: JSON.stringify({
+    //                 // crie um atributo que recebe o valor recuperado aqui
+        
+                    
+    //             })
+    //         }).then(function (resultado) {
+        
+    //                 console.log("resultado: ", resultado);
+        
+    //                 if (resultado.ok) {
+    //                     resultado.json().then(consulta => {
+    
+    //                         for(var i = 0;i<consulta.length;i++){
+    //                             coments.innerHTML +=consulta[i].descricao;
+    //                         }
+    //                       });
+    //                 }
+    //             }).catch(function (resultado) {
+    //                 console.log(`#ERRO: ${resultado}`);
+                  
+    //             });
+    // }
+    
+
+    fetch("/sugestao/consultaGeral", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+
+                
+            })
+        }).then(function (resultado) {
+
+                console.log("resultado: ", resultado);
+
+                if (resultado.ok) {
+                    resultado.json().then(consulta => {
+
+                        for(var i = 0;i<consulta.length;i++){
+                            coments.innerHTML += ` 
+                                <div class="caixas">
+                                        <div class="email"> ${consulta[i].email}</div>
+                                        <div class="conteudo"> ${consulta[i].descricao}</div>
+                                </div>`;
+                        }
+                    });
+                }
+            }).catch(function (resultado) {
+                console.log(`#ERRO: ${resultado}`);
+            
+            });
+
+
+</script>

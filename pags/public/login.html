@@ -18,6 +18,7 @@
                 <ul class="navbar">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="personagens.html">Personagens</a></li>
+                    <li><a href="sugestao.html">Sugestões</a></li>
                     <li id="liCadastro">Cadastrar</li>
                     <li id="liLogin">Login</li>
                 </ul>
@@ -174,6 +175,11 @@
 
                 swal("Cadastro bem sucedido!", "Cadastro realizado!", "success");
                 finalizarAguardar();
+                nome_input.value = "";
+                email_input.value = "";
+                senha_input.value = "";
+                confirmacao_senha_input.value = "";
+                abrirCadastro();
                 
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");

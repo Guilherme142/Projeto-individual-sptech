@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="css/sugestao.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <title>Sugestões</title>
+    </head>
+    <body>
+        <header>
+            <div class="container-nav"> 
+                <img src="img/Dragon_Ball_logo.png" class="logo-navbar" alt="">
+                <ul class="navbar">
+                    <li><a href="index.html"> Home </a></li>
+                    <li> <a href="personagens.html">Personagens</a></li>
+                    <li class="pag-selecionada">Sugestões</li>
+                    <li><a id="cadastro" href="login.html">Cadastrar</a></li>
+                    <li><a id="login" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="section-sugestao">
+            <div class="title-sugestao"><p>Sugestões</p></div>
+            <div id="coments" class="div-comentarios">
+
+
+            </div>
+        </div>
+        
+    </body>
+</html>
+<script>
+   
+   
+
+    fetch("/sugestao/consultaGeral", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+
+                
+            })
+        }).then(function (resultado) {
+
+                console.log("resultado: ", resultado);
+
+                if (resultado.ok) {
+                    resultado.json().then(consulta => {
+
+                        for(var i = 0;i<consulta.length;i++){
+                            coments.innerHTML += ` 
+                                <div class="caixas">
+                                        <div class="email"> ${consulta[i].email}</div>
+                                        <div class="conteudo"> ${consulta[i].descricao}</div>
+                                </div>`;
+                        }
+                    });
+                }
+            }).catch(function (resultado) {
+                console.log(`#ERRO: ${resultado}`);
+            
+            });
+
+
+
+    linkCadastro = document.getElementById("cadastro");
+    linkLogin = document.getElementById("login");
+    var tela;
+    linkCadastro.addEventListener("click",function(){
+        localStorage.setItem("tela","Cadastro");
+    });
+
+    linkLogin.addEventListener("click",function(){
+        localStorage.setItem("tela","Login");
+    });
+</script>

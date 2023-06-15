@@ -65,8 +65,10 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-
-    // Faça as validações dos valores
+    // var cabelo = req.body.cabeloServer;
+    // var rosto = req.body.rostoServer;
+    // var roupa = req.body.roupaServer;
+    // // Faça as validações dos valores
     if (nome == undefined) {
         res.status(400).send("Seu nome está undefined!");
     } else if (email == undefined) {
